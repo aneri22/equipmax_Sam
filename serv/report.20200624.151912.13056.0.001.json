@@ -1,0 +1,327 @@
+
+{
+  "header": {
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20200624.151912.13056.0.001.json",
+    "dumpEventTime": "2020-06-24T15:19:13Z",
+    "dumpEventTimeStamp": "1592992153415",
+    "processId": 13056,
+    "cwd": "C:\\Users\\1835558\\Desktop\\SAM\\serv",
+    "commandLine": [
+      "node",
+      "serv.js"
+    ],
+    "nodejsVersion": "v12.3.1",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.3.1",
+      "v8": "7.4.288.27-node.18",
+      "uv": "1.29.1",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.38.0",
+      "napi": "4",
+      "llhttp": "1.1.3",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1b",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019a",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "headersUrl": "https://nodejs.org/download/release/v12.3.1/node-v12.3.1-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.3.1/node-v12.3.1.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.3.1/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.15063",
+    "osVersion": "Windows 10 Enterprise",
+    "osMachine": "x86_64",
+    "host": "01HW546302"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff7343654e9",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+9161"
+    },
+    {
+      "pc": "0x00007ff734368dd4",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+23732"
+    },
+    {
+      "pc": "0x00007ff734367df8",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+19672"
+    },
+    {
+      "pc": "0x00007ff734450c9b",
+      "symbol": "uv_loop_fork+48251"
+    },
+    {
+      "pc": "0x00007ff734788bce",
+      "symbol": "v8::internal::Parser::ReportMessageAt+206"
+    },
+    {
+      "pc": "0x00007ff73475cc4a",
+      "symbol": "v8::internal::wasm::StreamingDecoder::Fail+666"
+    },
+    {
+      "pc": "0x00007ff7347f309c",
+      "symbol": "v8::internal::Heap::CreateFillerObjectAt+2972"
+    },
+    {
+      "pc": "0x00007ff7347fae1f",
+      "symbol": "v8::internal::LocalEmbedderHeapTracer::NotifyV8MarkingWorklistWasEmpty+5391"
+    },
+    {
+      "pc": "0x00007ff7347f1483",
+      "symbol": "v8::internal::Heap::CollectGarbage+1235"
+    },
+    {
+      "pc": "0x00007ff7347efb84",
+      "symbol": "v8::internal::GCTracer::AddScopeSample+1316"
+    },
+    {
+      "pc": "0x00007ff7348307b3",
+      "symbol": "v8::internal::Factory::NewFillerObject+67"
+    },
+    {
+      "pc": "0x00007ff734b576e6",
+      "symbol": "v8::internal::OptimizingCompileDispatcher::Unblock+116966"
+    },
+    {
+      "pc": "0x00007ff734ff2c16",
+      "symbol": "v8::internal::NativesCollection<0>::GetScriptsSource+662454"
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 11358208,
+    "totalCommittedMemory": 11358208,
+    "usedMemory": 9605064,
+    "availableMemory": 2077926992,
+    "memoryLimit": 2086666240,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 524288,
+        "committedMemory": 524288,
+        "capacity": 523976,
+        "used": 31712,
+        "available": 492264
+      },
+      "new_space": {
+        "memorySize": 1048576,
+        "committedMemory": 1048576,
+        "capacity": 1047952,
+        "used": 1047928,
+        "available": 24
+      },
+      "old_space": {
+        "memorySize": 7462912,
+        "committedMemory": 7462912,
+        "capacity": 7451648,
+        "used": 6877880,
+        "available": 573768
+      },
+      "code_space": {
+        "memorySize": 688128,
+        "committedMemory": 688128,
+        "capacity": 572960,
+        "used": 567264,
+        "available": 5696
+      },
+      "map_space": {
+        "memorySize": 1052672,
+        "committedMemory": 1052672,
+        "capacity": 1051736,
+        "used": 552480,
+        "available": 499256
+      },
+      "large_object_space": {
+        "memorySize": 532480,
+        "committedMemory": 532480,
+        "capacity": 524344,
+        "used": 524344,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 49152,
+        "committedMemory": 49152,
+        "capacity": 3456,
+        "used": 3456,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 1047952,
+        "used": 0,
+        "available": 1047952
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 3.093,
+    "kernelCpuSeconds": 2.328,
+    "cpuConsumptionPercent": 0.001591,
+    "maxRss": 38477824,
+    "pageFaults": {
+      "IORequired": 88776,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 282,
+      "writes": 6
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "=::": "::\\",
+    "=C:": "C:\\Users\\1835558\\Desktop\\SAM\\serv",
+    "=ExitCode": "00000001",
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "APPDATA": "C:\\Users\\1835558\\AppData\\Roaming",
+    "CLIENTNAME": "LAPTOP-IBGEN642",
+    "CommonProgramFiles": "C:\\Program Files\\Common Files",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "COMPUTERNAME": "01HW546302",
+    "ComSpec": "C:\\windows\\system32\\cmd.exe",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\1835558",
+    "LOCALAPPDATA": "C:\\Users\\1835558\\AppData\\Local",
+    "LOGONSERVER": "\\\\INMUMSPZDC12",
+    "NUMBER_OF_PROCESSORS": "4",
+    "OneDrive": "C:\\Users\\1835558\\OneDrive",
+    "OS": "Windows_NT",
+    "Path": "C:\\Program Files (x86)\\RSA SecurID Token Common;C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\WebEx\\Productivity Tools;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Program Files\\nodejs\\;C:\\Python27\\;C:\\Python27\\Scripts;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\WebEx\\Productivity Tools;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Program Files\\nodejs\\;C:\\Users\\1835558\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\1835558\\AppData\\Roaming\\npm\"",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 58 Stepping 9, GenuineIntel",
+    "PROCESSOR_LEVEL": "6",
+    "PROCESSOR_REVISION": "3a09",
+    "ProgramData": "C:\\ProgramData",
+    "ProgramFiles": "C:\\Program Files",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "PROMPT": "$P$G",
+    "PSModulePath": "C:\\Program Files\\WindowsPowerShell\\Modules;C:\\windows\\system32\\WindowsPowerShell\\v1.0\\Modules",
+    "PUBLIC": "C:\\Users\\Public",
+    "SESSIONNAME": "RDP-Tcp#13",
+    "SystemDrive": "C:",
+    "SystemRoot": "C:\\windows",
+    "TEMP": "C:\\Users\\1835558\\AppData\\Local\\Temp",
+    "TMP": "C:\\Users\\1835558\\AppData\\Local\\Temp",
+    "UATDATA": "C:\\windows\\CCM\\UATData\\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77",
+    "USERDNSDOMAIN": "INDIA.TCS.COM",
+    "USERDOMAIN": "INDIA",
+    "USERDOMAIN_ROAMINGPROFILE": "INDIA",
+    "USERNAME": "1835558",
+    "USERPROFILE": "C:\\Users\\1835558",
+    "ViewClient_Broker_DNS_Name": "01VS0000582.India.TCS.com",
+    "ViewClient_Broker_DomainName": "INDIA",
+    "ViewClient_Broker_Farm_ID": "test",
+    "ViewClient_Broker_GatewayHost": "mumspz.workspace.tcs.com",
+    "ViewClient_Broker_GatewayLocation": "External",
+    "ViewClient_Broker_GatewayType": "AP",
+    "ViewClient_Broker_Gateway_IP_Address": "10.59.69.2",
+    "ViewClient_Broker_Remote_IP_Address": "10.58.129.30",
+    "ViewClient_Broker_Tunneled": "false",
+    "ViewClient_Broker_URL": "https://10.58.129.31:443",
+    "ViewClient_Broker_UserName": "1835558",
+    "ViewClient_Client_ID=AgAAADVDRDYzNTRTQkaY5/RQOtI": "",
+    "ViewClient_Client_Version": "4.10.0-11021086",
+    "ViewClient_Displays.Number": "1",
+    "ViewClient_Displays.SystemDpi": "96",
+    "ViewClient_Displays.Topology": "{1366,768,0,0,32,1}",
+    "ViewClient_Displays.TopologyV2": "{1366,768,0,0,32,1,96}",
+    "ViewClient_IP_Address": "192.168.1.4",
+    "ViewClient_Keyboard.KeyDelayToRepeat": "1",
+    "ViewClient_Keyboard.KeyRepeatRate": "31",
+    "ViewClient_Keyboard.Language": "16393",
+    "ViewClient_Keyboard.Layout": "00004009",
+    "ViewClient_Keyboard.NumFuncKeys": "12",
+    "ViewClient_Keyboard.NumIndicators": "3",
+    "ViewClient_Keyboard.NumKeys": "101",
+    "ViewClient_Keyboard.ScanCodeMode": "1",
+    "ViewClient_Keyboard.SubType": "0",
+    "ViewClient_Keyboard.Type": "7",
+    "ViewClient_Language": "en-IN",
+    "ViewClient_Launch_ID": "test",
+    "ViewClient_Launch_SessionType": "DESKTOP",
+    "ViewClient_LoggedOn_Domainname": "WORKGROUP",
+    "ViewClient_LoggedOn_Username": "Patankar",
+    "ViewClient_Machine_Domain": "WORKGROUP",
+    "ViewClient_Machine_Name": "LAPTOP-IBGEN642",
+    "ViewClient_MAC_Address": "30-E3-7A-16-06-57",
+    "ViewClient_Mouse.Identifier": "256",
+    "ViewClient_Mouse.NumButtons": "16",
+    "ViewClient_Protocol": "RDP",
+    "ViewClient_Type": "Windows",
+    "ViewClient_TZID": "Asia/Calcutta",
+    "ViewClient_Windows_Timezone": "India Standard Time",
+    "windir": "C:\\windows"
+  },
+  "sharedObjects": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\windows\\SYSTEM32\\ntdll.dll",
+    "C:\\windows\\System32\\KERNEL32.DLL",
+    "C:\\windows\\System32\\KERNELBASE.dll",
+    "C:\\windows\\System32\\WS2_32.dll",
+    "C:\\windows\\System32\\sechost.dll",
+    "C:\\windows\\System32\\RPCRT4.dll",
+    "C:\\windows\\System32\\ADVAPI32.dll",
+    "C:\\windows\\System32\\msvcrt.dll",
+    "C:\\windows\\System32\\USER32.dll",
+    "C:\\windows\\System32\\win32u.dll",
+    "C:\\windows\\SYSTEM32\\dbghelp.dll",
+    "C:\\windows\\System32\\GDI32.dll",
+    "C:\\windows\\System32\\ucrtbase.dll",
+    "C:\\windows\\System32\\gdi32full.dll",
+    "C:\\windows\\System32\\msvcp_win.dll",
+    "C:\\windows\\System32\\PSAPI.DLL",
+    "C:\\windows\\System32\\CRYPT32.dll",
+    "C:\\windows\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\windows\\System32\\MSASN1.dll",
+    "C:\\windows\\SYSTEM32\\USERENV.dll",
+    "C:\\windows\\System32\\profapi.dll",
+    "C:\\windows\\SYSTEM32\\bcrypt.dll",
+    "C:\\windows\\SYSTEM32\\WINMM.dll",
+    "C:\\windows\\SYSTEM32\\WINMMBASE.dll",
+    "C:\\windows\\System32\\cfgmgr32.dll",
+    "C:\\windows\\System32\\IMM32.DLL",
+    "C:\\windows\\System32\\umppc11404.dll",
+    "C:\\windows\\system32\\vmwsci.dll",
+    "C:\\windows\\System32\\QIPCAP64.dll",
+    "C:\\windows\\System32\\SHELL32.dll",
+    "C:\\windows\\System32\\shcore.dll",
+    "C:\\windows\\System32\\combase.dll",
+    "C:\\windows\\System32\\bcryptPrimitives.dll",
+    "C:\\windows\\System32\\windows.storage.dll",
+    "C:\\windows\\System32\\shlwapi.dll",
+    "C:\\windows\\System32\\kernel.appcore.dll",
+    "C:\\windows\\System32\\powrprof.dll",
+    "C:\\windows\\SYSTEM32\\MAPI32.dll",
+    "C:\\windows\\System32\\ole32.dll",
+    "C:\\windows\\SYSTEM32\\DNSAPI.dll",
+    "C:\\windows\\System32\\NSI.dll",
+    "C:\\windows\\system32\\uxtheme.dll",
+    "C:\\windows\\system32\\mswsock.dll",
+    "C:\\windows\\system32\\napinsp.dll",
+    "C:\\windows\\system32\\pnrpnsp.dll",
+    "C:\\windows\\system32\\NLAapi.dll",
+    "C:\\windows\\System32\\winrnr.dll"
+  ]
+}

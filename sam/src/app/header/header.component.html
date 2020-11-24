@@ -1,0 +1,32 @@
+<div class="name">
+  <mat-toolbar fxFlex="100%" class="col-bg-header" style="width:100%;">
+      <div class="logo">EquipMax.<span class="apptype" style="text-decoration:none;">Software Management</span> </div>
+
+      <div class="links">
+          <span><a routerLink="/software" routerLinkActive="activeclass">Software Configuration</a></span>
+          <span><a routerLink="/overview" routerLinkActive="activeclass">Dashboard</a></span>
+          <span><a routerLink="/report"  routerLinkActive="activeclass">Reports</a></span>
+      </div>
+
+      <div class="icon">
+          <mat-icon class="r1" svgIcon="account_circle"></mat-icon>
+          <mat-icon class="r2" [matBadgeHidden] = "notificationslength == 0"
+           [matBadge]="notificationslength" matBadgeColor="warn"
+            svgIcon="notifications_active"
+              [matMenuTriggerFor]="menu">
+          </mat-icon>
+
+
+          <mat-menu #menu="matMenu">
+
+              <button class="notificationbtn" mat-menu-item *ngFor="let license of notifications"
+              [class.unread]="license.readflag"
+              (click)="notificationClicked(license)">
+                 <b style="color:#5680e9">{{ license.license_name}}</b> {{ license.btntext }} <b style="color: red;"> {{ license.days}} </b><small *ngIf="license.days > 0 "> Days. Please Renew.</small>
+              </button>
+          </mat-menu>
+          <mat-icon class="r3" svgIcon="settings"></mat-icon>
+          <mat-icon class="r4" svgIcon="exit_to_app"></mat-icon>
+      </div>
+  </mat-toolbar>
+</div>

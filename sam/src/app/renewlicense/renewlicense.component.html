@@ -1,0 +1,138 @@
+<div class="renewForm">
+  
+  <mat-card>
+  
+  <mat-card-header>
+  
+  <mat-card-title>
+  
+  <h4 class="col-for-primary"> Renew License </h4>
+  
+  </mat-card-title>
+  
+  </mat-card-header>
+  
+  <mat-card-content>
+    
+  <form>
+ 
+  <table>
+  
+  <tr>
+  
+  <td colspan="4">
+  
+  <label>
+  
+  <b>License Details:</b>
+  
+  </label>
+  
+  </td>
+  
+  </tr>
+  
+  
+  
+  <tr>
+  
+  <td>
+  
+  <label>License Name:</label>
+  
+  </td>
+  
+  <td> {{license.License_Name}}</td>
+  
+  <td>
+  
+  <label>License Type:</label>
+  
+  </td>
+  
+  <td>
+  
+ {{license.Ltype_ID}}
+  
+  </td>
+  
+  </tr>
+  
+  <tr>
+  
+  <td>
+  
+  <label>License Key:</label>
+  
+  </td>
+  
+  <td>
+  
+  {{license.License_Key}}
+  
+  </td>
+  
+  <td>
+  
+  <label>Previous Expiry Date:</label>
+  
+  </td>
+  
+  <td>
+  
+  {{license.License_Expiry_date}}
+  
+  </td>
+  
+  </tr>
+  
+  <tr>
+  
+  <td>
+  
+  <label>New Expiry Date:</label>
+  
+  </td>
+  
+  <td>
+  
+  <mat-form-field>
+  
+  <input [formControl]="newDate" [min]="todaysDate" matInput [matDatepicker]="picker3" placeholder="Choose a date">
+  
+  <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+  
+  <mat-datepicker #picker3></mat-datepicker>
+  
+  </mat-form-field>
+  
+  </td>
+  
+  </tr>
+  
+  </table>
+  
+  </form>
+  
+  </mat-card-content>
+  
+  <mat-dialog-actions>
+  
+  <button [disabled]="!newDate.valid" (click)="renewLicense()" mat-raised-button class="stylepopupbuttonconfirm">
+  
+  Renew
+  
+  </button>
+  
+  <button mat-raised-button routerLink="/software/" class="stylepopupbuttoncancel">
+  Close
+  
+  </button>
+
+
+  </mat-dialog-actions>
+  
+    
+  </mat-card>
+  
+  </div>

@@ -1,0 +1,643 @@
+
+@media only screen and (min-width : 320px) {
+
+
+}
+
+
+
+/* Extra Small Devices, Phones */ 
+
+@media only screen and (min-width : 480px) {
+
+
+
+}
+
+
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width : 768px) {
+
+
+
+}
+
+
+
+/* Medium Devices, Desktops */
+
+@media only screen and (min-width : 992px) {
+
+
+
+}
+
+
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width : 1200px) {
+
+
+
+}
+
+
+
+
+
+
+
+/*========== Non-Mobile First Method ==========*/
+
+
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (max-width : 1200px) {
+
+
+
+}
+
+
+
+/* Medium Devices, Desktops */
+
+@media only screen and (max-width : 992px) {
+
+
+
+}
+
+
+
+/* Small Devices, Tablets */
+
+@media only screen and (max-width : 768px) {
+
+
+
+}
+
+
+
+/* Extra Small Devices, Phones */ 
+
+@media only screen and (max-width : 480px) {
+
+
+
+}
+
+
+
+/* Custom, iPhone Retina */ 
+
+@media only screen and (max-width : 320px) {
+
+
+}
+
+
+
+
+/*=====================================================
+
+= Bootstrap 2.3.2 Media Queries =
+
+=====================================================*/
+
+@media only screen and (max-width : 1200px) {
+
+
+
+}
+
+
+
+@media only screen and (max-width : 979px) {
+
+
+
+}
+
+
+
+@media only screen and (max-width : 767px) {
+
+
+
+}
+
+
+
+@media only screen and (max-width : 480px) {
+
+
+
+}
+
+
+
+@media only screen and (max-width : 320px) {
+
+
+
+}
+
+
+
+
+
+/* default styles here for older browsers. 
+
+I tend to go for a 600px - 960px width max but using percentages
+
+*/
+
+@media only screen and (min-width:960px){
+
+/* styles for browsers larger than 960px; */
+
+}
+
+@media only screen and (min-width:1440px){
+
+/* styles for browsers larger than 1440px; */
+
+}
+
+@media only screen and (min-width:2000px){
+
+/* for sumo sized (mac) screens */
+
+}
+
+@media only screen and (max-device-width:480px){
+
+/* styles for mobile browsers smaller than 480px; (iPhone) */
+
+}
+
+@media only screen and (device-width:768px){
+
+/* default iPad screens */
+
+}
+
+/* different techniques for iPad screening */
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+
+/* For portrait layouts only */
+
+}
+
+
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+
+/* For landscape layouts only */
+
+}
+
+
+
+/*******Nuevos mensajes de error******/
+
+
+.new-message-box {
+
+margin: 15px 0;
+
+padding-left: 20px;
+
+margin-bottom: 5px!important;
+
+}
+
+
+
+.new-message-box p{
+
+font-size: 1em;
+
+font-weight: 300;
+
+}
+
+
+
+.info-tab {
+
+width: 40px;
+
+height: 10px;
+
+display: inline-block;
+
+position: relative;
+
+top: 8px;
+
+}
+
+
+
+.info-tab {
+
+float: left;
+
+margin-left: -23px;
+
+}
+
+
+
+.info-tab i::before {
+
+width: 24px;
+
+height: 24px;
+
+box-shadow: inset 12px 0 13px rgba(0,0,0,0.5);
+
+}
+
+
+
+.info-tab i::after {
+
+width: 0;
+
+height: 0;
+
+border: 12px solid transparent;
+
+border-bottom-color: #fff;
+
+border-left-color: #fff;
+
+bottom: -18px;
+
+}
+
+
+
+.info-tab i::before, .info-tab i::after {
+
+content: "";
+
+display: inline-block;
+
+position: absolute;
+
+left: 0;
+
+bottom: -7px;
+
+transform: rotateX(60deg);
+
+}
+
+
+
+.note-box, .warning-box, .tip-box-success, .tip-box-danger, .tip-box-warning, .tip-box-info, .tip-box-alert {
+
+padding: 1px 2px 1px 10px;
+
+}
+
+
+
+
+
+
+
+/***Success****/
+
+
+
+.new-message-box-success {
+
+background: #eeeeee;
+
+padding: 1px;
+
+margin: 5px 0;
+
+}
+
+
+
+.tip-icon-success {
+
+background: white;
+
+}
+
+
+
+.tip-box-success {
+
+color:black;//900
+
+background:white;//500
+
+}
+
+
+
+.tip-icon-success::before {
+
+font-size: 16px;
+
+content:"\f00c";
+
+top: 4px;
+
+left: 11px;
+
+font-family: FontAwesome;
+
+position: absolute;
+
+color: white;
+
+}
+
+
+
+.tip-icon-success i::before {
+
+background:white;//500
+
+}
+
+
+
+
+
+/*******Danger*******/
+
+.new-message-box-danger {
+
+background: #eeeeee;
+
+padding: 3px;
+
+margin: 10px 0;
+
+}
+
+
+
+.tip-icon-danger {
+
+background: whitesmoke;
+
+}
+
+
+
+.tip-box-danger {
+
+color: #212121;//900
+
+background: lavender;
+
+}
+
+
+
+.tip-icon-danger::before {
+
+font-size: 16px;
+
+content:"\f00d";
+
+top: 8px;
+
+left: 11px;
+
+font-family: FontAwesome;
+
+position: absolute;
+
+color: white;
+
+}
+
+
+
+.tip-icon-danger i::before {
+
+background:lavender;
+
+}
+
+
+
+/*******warning*******/
+
+.new-message-box-warning {
+
+background: lavender;
+
+padding: 3px;
+
+margin: 10px 0;
+
+}
+
+
+
+.tip-icon-warning {
+
+background:whitesmoke;//500
+
+}
+
+
+
+.tip-box-warning {
+
+color: #212121;//900
+
+background: lavender;
+
+}
+
+
+
+.tip-icon-warning::before {
+
+font-size: 16px;
+
+content:"\f071";
+
+top: 8px;
+
+left: 11px;
+
+font-family: FontAwesome;
+
+position: absolute;
+
+color: #212121;
+
+}
+
+
+
+.tip-icon-warning i::before {
+
+background: whitesmoke;//500
+
+}
+
+
+
+/*******info*******/
+
+.new-message-box-info {
+
+background: #eeeeee;
+
+padding: 3px;
+
+margin: 10px 0;
+
+}
+
+
+
+.tip-box-info {
+
+color: black;//900
+
+background: white;//100
+
+}
+
+
+
+.tip-icon-info {
+
+background:whitesmoke;//500
+
+}
+
+
+
+.tip-icon-info::before {
+
+font-size: 16px;
+
+content:"\f129";
+
+top: 8px;
+
+left: 11px;
+
+font-family: FontAwesome;
+
+position: absolute;
+
+color: white
+
+}
+
+
+
+.tip-icon-info i::before {
+
+background: white;//500
+
+}
+
+
+
+
+
+/*******info*******/
+
+.new-message-box-alert {
+
+background: lavender;
+
+padding: 2px;
+
+margin: 5px 0;
+
+}
+
+
+
+.tip-box-alert {
+
+// color: #212121;//900
+
+background: white;
+
+}
+
+
+
+.tip-icon-alert {
+
+background:whitesmoke;//500
+
+}
+
+
+
+.tip-icon-alert::before {
+
+font-size: 25px;
+
+content:"\f06a";
+
+top: 8px;
+
+left: 11px;
+
+font-family: FontAwesome;
+
+position: absolute;
+
+color: white
+
+}
+
+
+
+.tip-icon-alert i::before {
+
+background: whitesmoke;//500
+
+}
+
+
+.read{
+  background-color: lavender;
+}
+
+
+
+
+
+/*************************/
+
+
+
+body {
+
+background-color:#ffffff;
+
+
+}
+

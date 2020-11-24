@@ -1,0 +1,204 @@
+@import "src/theme.scss";
+
+@import "src/app/app.component.scss";
+
+
+
+::ng-deep .mat-form-field-underline {
+
+display: none;
+
+}
+
+
+
+
+
+
+.addForm {
+
+
+
+margin: 5px;
+
+
+
+text-align: center;
+
+
+
+box-shadow: 3px 11px 22px 0px rgba(0,0,0,0.53);
+
+
+
+max-width: 100%;
+
+
+
+}
+
+
+
+mat-card-actions{
+
+margin-left: 400px;
+
+}
+
+// input {
+
+// border:1px solid lightgrey;
+
+// }
+
+textarea{
+
+border: 1px solid #dce0d4;
+
+border-radius: 5px;
+
+padding: 5px;
+
+width: 195px;
+
+height: 35px;
+
+margin: 5px;
+
+//margin-top:10px; 
+
+}
+
+.error{
+
+color: red;
+font-size: 11px;
+}
+
+.select{
+
+border: 1px solid #dce0d4;
+
+border-radius: 5px;
+
+padding: 5px;
+
+width: 210px;
+
+height: 30px;
+
+margin: 5px;
+
+margin-top:10px; 
+
+
+
+}
+
+input[type='text']{
+
+border: 1px solid #dce0d4;
+
+border-radius: 5px;
+
+padding: 5px;
+
+width: 195px;
+
+height: 20px;
+
+margin: 5px;
+
+//margin-top:10px; 
+
+}
+
+// matInput{
+
+// border: 1px solid #dce0d4;
+
+// border-radius: 5px;
+
+
+// width: 300px;
+
+// height: 28px;
+
+// margin: 5px;
+
+// //margin-top:10px; 
+
+// }
+
+input[type='number']{
+
+border: 1px solid #dce0d4;
+
+border-radius: 5px;
+
+padding: 5px;
+
+width: 195px;
+
+height: 20px;
+
+margin: 5px;
+
+//margin-top:10px; 
+
+}
+
+
+
+button{
+
+max-width: 120px;
+
+
+
+margin-left: 50%;
+
+
+
+float: left;
+
+
+
+margin: 0;
+
+
+}
+
+.alert-danger{
+
+color: red;
+
+}
+
+
+
+.mat-date-picker-input-container{
+
+margin-left: 2px;
+
+border: 1px solid lightgrey;
+
+border-radius: 5%;
+
+}
+
+::ng-deep mat-form-field{
+
+height: 35px;
+
+width: 195px;
+
+padding: 5px;
+
+margin-left: 4px;
+
+border: 1px solid lightgrey;
+
+border-radius: 5px;
+
+}

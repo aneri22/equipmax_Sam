@@ -1,0 +1,293 @@
+<div class="suiteForm">
+
+  <mat-card>
+  
+  <mat-card-header>
+  
+  <mat-card-title>
+  
+  <h4 class="card-title col-for-primary">Add Software Suite</h4>
+  
+  </mat-card-title>
+  
+  </mat-card-header>
+  
+  <form [formGroup]="addsoftwaresuite">
+  
+  <table>
+  
+  
+  
+  <tr>
+  
+  
+  
+  <td> <label>
+  
+  
+  
+  Software Suite Name:
+  
+  
+  
+  </label></td>
+  
+  
+  
+  <td><input type="text" formControlName="suite_name" placeholder="Enter name" name="suite_name" required />
+  </td>
+<td style="width:120px;">
+  <p class="error"
+  
+  *ngIf="addsoftwaresuite.get('suite_name').invalid && addsoftwaresuite.get('suite_name').touched">
+  
+  * Mandatory.</p>
+  
+  </td>
+  
+  <td> <label>
+
+  Version:
+    
+  </label></td>
+  
+  
+  
+  <td><input type="text" formControlName="version" placeholder="Enter version" name="version" required /></td>
+  <td style="width:120px;">
+  
+    <p class="error"
+    
+    *ngIf="addsoftwaresuite.get('version').invalid && addsoftwaresuite.get('version').touched">
+    
+    * Version
+    
+    is required.</p>
+    
+    </td>
+  </tr>
+  
+  <tr>
+  
+  <td>
+  
+  
+  
+  <label>
+  
+  
+  
+  Software Category:
+  
+  
+  
+  </label>
+  
+  
+  
+  </td>
+  
+  
+  
+  <td>
+  
+  <select class="select" name="Software_category" formControlName="Software_category">
+  
+  
+  
+  <option value="" selected data-default>
+  
+  Select Category
+  
+  </option>
+  
+  <option value="Accounting">Accounting</option>
+  
+  
+  
+  <option value="Education & Reference">Education & Reference</option>
+  
+  
+  
+  <option value="Graphics">Graphics</option>
+  
+  
+  
+  <option value="Multimedia">Multimedia</option>
+  
+  
+  
+  <option value="Games">Games</option>
+  
+  
+  
+  <option value="Internet">Internet</option>
+  
+  
+  
+  <option value="Development">Development</option>
+  
+  
+  
+  <option value="Database">Database</option>
+
+  </select>
+  
+  </td>
+  <td style="width:120px;" >
+  
+    <p class="error"
+    
+    *ngIf="addsoftwaresuite.get('Software_category').invalid && addsoftwaresuite.get('Software_category').touched">
+    
+    * Category
+    
+    is required.</p>
+    
+    </td>
+  <td>
+
+  <label>Manufacturer Name:
+  
+  </label>
+    
+  </td>
+
+  <td>
+  
+  <input type="text" formControlName="manufacturer_name" placeholder="Enter name" name="manufacturer_name" required />
+  
+  </td>
+  <td style="width:120px;">
+  
+    <p class="error"
+    
+    *ngIf="addsoftwaresuite.get('manufacturer_name').invalid && addsoftwaresuite.get('manufacturer_name').touched">
+    
+    * Mandatory</p>
+    
+    </td>
+  
+  
+  </tr>
+    
+  <tr>
+  
+  <td><label>
+  
+  Software Type:
+
+  </label></td>
+  
+  
+  
+  <td>
+  
+  <select class="select" name="Software_Type" formControlName="Software_Type">
+  
+  
+  
+  <option value="" selected data-default>
+  
+  Select type
+  
+  </option>
+  
+  
+  
+  <option value="System Software">System Software</option>
+  
+  <option value="Application Software">Application Software</option>
+  
+  <option value="Programming Software">Programming Software</option>
+  
+  </select>
+  
+  </td>
+  <td style="width:120px;">
+  
+    <p class="error"
+    
+    *ngIf="addsoftwaresuite.get('Software_Type').invalid && addsoftwaresuite.get('Software_Type').touched">
+    
+    * Software Type
+    
+    is required.</p>
+    
+    </td>
+  
+  <!-- </tr>
+  
+  
+  <tr> -->
+  
+  <td>
+  
+  <label>
+  
+  Software Subtype:
+  
+  </label>
+  
+  </td>
+  
+  <td>
+  
+  <select class="select" name="Software_subtype" formControlName="Software_subtype">
+  
+  <option value="" selected data-default>
+  
+  Select subtype
+  
+  </option>
+  
+  <option value="Freeware">Freeware</option>
+  
+  <option value="Shareware">Shareware</option>
+  
+  <option value="Utility">Utility</option>
+  
+  <option value="Browser">Browser</option>
+
+  </select>
+    
+  </td>
+  <td style="width:120px;">
+  
+    <p class="error"
+    
+    *ngIf="addsoftwaresuite.get('Software_subtype').invalid && addsoftwaresuite.get('Software_subtype').touched">
+    
+    * Software Type
+    
+    is required.</p>
+    
+    </td>
+
+  </tr>
+  
+  </table>
+    
+  <mat-card-actions>
+
+  <button [disabled]="!addsoftwaresuite.valid" mat-raised-button class="stylepopupbuttonconfirm">
+  
+  Add
+  
+  </button>
+  
+  <button mat-raised-button class="stylepopupbuttoncancel" routerLink="/swconfig">
+  
+  Cancel
+  
+  </button>
+  
+  </mat-card-actions>
+  
+  </form>
+  </mat-card>
+  
+</div>
+  
+  <router-outlet></router-outlet>
+  

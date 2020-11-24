@@ -1,0 +1,298 @@
+<div class="updateForm">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h4 class="card-title col-for-primary">Upgrade license</h4>
+      </mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="upgradeForm" (ngSubmit)="submitUpgradeForm()">
+      <table>
+        <tr>
+          <td>
+            <label>
+              Manufacturer Name:
+            </label>
+          </td>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter name"
+              formControlName="manufacturer_name"
+              name="manufacturer_name"
+              required
+            />
+          </td>
+          <td class="s1">
+            <p
+              class="error"
+              *ngIf="
+                upgradeForm.get('manufacturer_name').invalid &&
+                upgradeForm.get('manufacturer_name').touched
+              "
+            >
+              *Field is required.
+            </p>
+          </td>
+          <td>
+            <label>
+              Current Version:
+            </label>
+          </td>
+          <td>
+            <input
+              type="text"
+              placehoder="version"
+              formControlName="version"
+              name="version"
+              required
+            />
+          </td>
+          <td class="s1">
+            <p
+              class="error"
+              *ngIf="
+                upgradeForm.get('version').invalid &&
+                upgradeForm.get('version').touched
+              "
+            >
+              *Field is required.
+            </p>
+          </td>
+          <br />
+        </tr>
+        <tr>
+          <td>
+            Software Category
+          </td>
+          <td style="font-size: 16px;">
+            <select class="select" formControlName="category" name="category">
+              <option
+                *ngFor="let item of softwareCategory"
+                [value]="item.SCategory_ID"
+                [selected]="item.SCategory_Name === scategory"
+                >{{ item.SCategory_Name }}</option
+              >
+            </select>
+          </td>
+          <td class="s1">
+            <p
+              class="error"
+              *ngIf="
+                upgradeForm.get('category').invalid &&
+                upgradeForm.get('category').touched
+              "
+            >
+              *Field is required.
+            </p>
+          </td>
+          <td>
+            <label>Software Subtype</label>
+          </td>
+          <td>
+            <select class="select" formControlName="subtype" name="subtype">
+              <option
+                *ngFor="let item of softwareSubtypes"
+                [value]="item.SubType_ID"
+                [selected]="item.SubType_Name === ssubtype"
+                >{{ item.SubType_Name }}</option
+              >
+            </select>
+          </td>
+          <td class="s1">
+            <p
+              class="error"
+              *ngIf="
+                upgradeForm.get('subtype').invalid &&
+                upgradeForm.get('subtype').touched
+              "
+            >
+              *Field is required.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label> Upgrade To: </label>
+          </td>
+          <td>
+            <select
+              class="select"
+              formControlName="new_software"
+              name="new_software"
+              (change)="changeVersion($event.target.value)"
+            >
+              <option value="" selected data-default>
+                Select Version
+              </option>
+              <option
+                *ngFor="let item of newSoftwares"
+                [value]="item.software_name"
+                >{{ item.software_name }}</option
+              >
+            </select>
+          </td>
+          <td class="s1">
+            <p
+              class="error"
+              *ngIf="
+                upgradeForm.get('new_software').invalid &&
+                upgradeForm.get('new_software').touched
+              "
+            >
+              *Field is required.
+            </p>
+          </td>
+          <td>
+            <label>
+              Installations
+            </label>
+          </td>
+          <td>
+            <input
+              type="number"
+              min="1"
+              name="Installations"
+              formControlName="installations"
+              placeholder="Installations"
+              required
+            />
+          </td>
+          <td class="s1">
+            <p
+              class="error"
+              *ngIf="
+                upgradeForm.get('installations').invalid &&
+                upgradeForm.get('installations').touched
+              "
+            >
+              *Field is required.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+              Select Software Type:
+            </label>
+          </td>
+          <td>
+            <select
+              class="select"
+              formControlName="software_type"
+              name="software_type"
+            >
+              <option
+                *ngFor="let item of softwareTypes"
+                [value]="item.SType_ID"
+                [selected]="item.SType_Name === stype"
+                >{{ item.SType_Name }}</option
+              >
+            </select>
+          </td>
+
+          <td class="s1">
+            <p
+              class="error"
+              *ngIf="
+                upgradeForm.get('software_type').invalid &&
+                upgradeForm.get('software_type').touched
+              "
+            >
+              *Field is required.
+            </p>
+          </td>
+          <td>
+            <label>
+              Publisher Name:
+            </label>
+          </td>
+          <td>
+            <input
+              type="text"
+              name="vendor_name"
+              formControlName="publisher"
+              placeholder="publisher"
+              required
+            />
+          </td>
+          <td class="s1">
+            <p
+              class="error"
+              *ngIf="
+                upgradeForm.get('publisher').invalid &&
+                upgradeForm.get('publisher').touched
+              "
+            >
+              *Field is required.
+            </p>
+          </td>
+        </tr>
+        <!-- <tr>
+          <td>
+            <label>
+              Purchase cost in Rs:
+            </label>
+          </td>
+          <td>
+            <input
+              type="number"
+              formControlName="purchase_cost"
+              min="1"
+              name="purchase_cost"
+              placeholder="Cost"
+            />
+          </td>
+          <td class="s1">
+            <p
+              class="error"
+              *ngIf="
+                upgradeForm.get('purchase_cost').invalid &&
+                upgradeForm.get('purchase_cost').touched
+              "
+            >
+              *Field is required.
+            </p>
+          </td>
+          <td>
+            <label>
+              Description:
+            </label>
+          </td>
+          <td>
+            <textarea
+              class="example-full-width"
+              formControlName="Description"
+              #message
+              maxlength="255"
+              placeholder="Description"
+              style="
+                border: 1px solid lightgrey;
+                border-radius: 5px;
+                height: 50px;
+                width: 195px;
+                color: black;
+              "
+            >
+            </textarea>
+          </td>
+        </tr> -->
+      </table>
+      <mat-card-actions>
+        <button
+          [disabled]="!upgradeForm.valid"
+          mat-raised-button
+          class="stylepopupbuttonconfirm"
+        >
+          Upgrade
+        </button>
+        <button
+          mat-raised-button
+          (click)="goBack()"
+          class="stylepopupbuttoncancel"
+        >
+          Cancel
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

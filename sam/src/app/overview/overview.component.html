@@ -1,0 +1,42 @@
+<div class="container" fxLayout="column">
+
+    <div class="piecharts" fxLayout="row">
+
+    <div class="chart" fxFlex="30" >
+        <google-chart #chart1 [title]="title1" [type]="type_1" [data]="data_1" [columnNames]="columnNames_1"
+            [options]="options_1" [width]="width_1" [height]="height_1">
+        </google-chart>
+
+    </div>
+
+
+    <div class="chart" fxFlex="30">
+        <google-chart #chart2 [title]="title2" [type]="type_2" [data]="data_2" [columnNames]="columnNames_2"
+            [options]="options_2" [width]="width_2" [height]="height_2">
+
+        </google-chart>
+    </div>
+
+    <div class="chart" fxFlex="30">
+        <google-chart #chart3 [title]="title3" [type]="type_3" [data]="data_3" [columnNames]="columnNames_3"
+            [options]="options_3" [width]="width_3" [height]="height_3"></google-chart>
+    </div>
+</div>
+
+
+
+<div class="other charts"  fxLayout="row"  fxLayoutGap="60px">
+    <div class="chart1 ">
+        <google-chart #chart [title]="title" [type]="type" [data]="data" [columnNames]="columnNames" [options]="options"
+            [width]="width" [height]="height">
+        </google-chart>
+    </div>
+
+
+    <div class="counts">
+        <mat-card class="place">Total count of unused<br>{{totalunused}}</mat-card>
+        <mat-card class="place">Underused License<br>{{totaloverused}}</mat-card>
+    </div>
+</div>
+
+</div>

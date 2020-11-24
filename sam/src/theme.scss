@@ -1,0 +1,75 @@
+@import '~@angular/material/theming';
+@include mat-core();
+$custom-col:( 50: #e3eaef,
+100: rgb(148, 67, 47),
+200: #89a6bd,
+300: #5a82a2,
+400: #36688e,
+500: #5680e9,  
+600: #8860d0,
+700: #0e3d67,
+800: #0b345d,
+900: #06254a,
+A100: #7fb0ff,
+A200: #4c91ff,
+A400: #1971ff,
+A700: #5272c2,
+contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $black-87-opacity,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+        A100: $black-87-opacity,
+        A200: $black-87-opacity,
+        A400: $black-87-opacity,
+        A700: white,
+    )
+);
+$reddish-app-primary-light:mat-palette($custom-col,A700);
+$reddish-app-primary: mat-palette($custom-col,500);
+$reddish-app-accent:  mat-palette($custom-col, 600);
+$reddish-app-warn:    mat-palette($mat-deep-orange);
+$reddish-app-theme: mat-light-theme($reddish-app-primary, $reddish-app-accent, $reddish-app-warn);
+@include angular-material-theme($reddish-app-theme);
+
+.col-bg-primary{
+    background-color: mat-color($reddish-app-primary);
+}
+.col-bg-accent{
+    background-color: mat-color($reddish-app-accent);
+}
+.col-bg-button
+{
+    background-color: mat-color($reddish-app-primary);
+}
+.col-bg-header{
+    background: linear-gradient(mat-color($reddish-app-primary) , mat-color($reddish-app-accent) );
+    // background: linear-gradient(rgb(148, 67, 47) 30%,rgb(27, 66, 92) 120%);
+}
+.col-for-primary
+{
+color: mat-color($reddish-app-primary);
+}
+.col-for-accent
+{
+color: mat-color($reddish-app-accent);
+}
+.col-text-head{
+    color: mat-color($reddish-app-accent);
+    font-size: 20px;
+}
+
+
+.col-route-bg{
+    background: linear-gradient(mat-color($reddish-app-accent) , mat-color($reddish-app-primary) );
+}
+
+.body-bg-clr{
+    background: linear-gradient(mat-color($reddish-app-primary) , white );
+}

@@ -1,0 +1,143 @@
+.sidenav {
+
+    width: 220px;
+    
+    position: fixed;
+    
+    z-index: 1;
+    
+    
+    overflow-x: hidden;
+    
+    padding: 8px;
+    
+    border-right: 1px solid lightgray;
+    
+    }
+    
+    
+    
+    .sidenav a {
+    
+    padding: 6px 8px 6px 16px;
+    
+    text-decoration: none;
+    
+    font-size: 16px;
+    
+    color: black;
+    
+    display: block;
+    
+    // border-bottom: 1px solid #6A5ACD;
+    
+    }
+    
+    
+    
+    mat-list-item{
+    
+    cursor: pointer;
+    
+    }
+    
+    
+    
+    mat-list-item:hover{
+    
+    background: lightgray;
+    
+    }
+
+
+    .active {
+        background-color: lightgray;
+    }
+    
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    // .sidenav a:active{
+    
+    // background-color: 
+    
+    // }
+    
+    
+    
+    .sidenav span {
+    
+    border-bottom: 1px solid black;
+    
+    }
+    
+    
+    
+    
+    
+    
+    .sidenav a:hover {
+    
+    cursor: pointer;
+    
+    }
+    
+    
+    
+    .license {
+        height: 300px;
+    }
+    .category{
+        height: 350px;
+    }
+    mat-checkbox{
+        display: block;
+        
+    }
+    
+    .main {
+    
+    margin-left: 240px; /* Same width as the sidebar + left position in px */
+    
+    font-size: 16px; /* Increased text to enable scrolling */
+    
+    padding: 0px 10px;
+    height: 400px;
+    
+    }
+    
+    
+    
+    
+    
+    mat-dialog-content{
+    
+    height: 300px;
+    
+    
+    }
+    
+    
+    
+    
+    
+    mat-dialog{
+    
+    width: 400px;
+    
+    
+    
+    }
+    
+    

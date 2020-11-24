@@ -1,0 +1,207 @@
+.container{
+  margin: 10px;
+  width: 100%;
+  
+  }
+
+
+
+  
+
+  .wrapper{
+  width: 100%;
+  margin: 0.5%;
+  }
+  
+ 
+  .filt{ 
+  margin-left:88%; 
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+position: -webkit-sticky;
+
+z-index: 1000;
+
+position: sticky;
+
+top: 0;
+
+padding: 60px;
+
+padding-top: 0%;
+
+padding-bottom: 0%;
+
+font-size: 20px;
+
+  }
+
+  
+  .filt button { 
+  margin-top: 10px;
+  height: 40px;
+  font-size: 16px;
+  background-color: #6775e0; 
+  color: white;
+  }
+  
+  
+  h3{
+  padding: 6px;
+  background-color: #6775e0; 
+  color: white;
+  margin: 0;
+  width : 600;
+  }
+
+  
+ 
+  .charts {
+  justify-items: center;
+  }
+  
+  .chart1 {
+  justify-self: center;
+  }
+ 
+  .percentages {
+  
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 35px;
+  grid-column-gap: 10px;
+  }
+  
+  
+  
+  
+  
+  .percentages button {
+  margin-top: 5%;
+  margin-left: 15%;
+  padding: 30px;
+  font-size: 2rem;
+  
+  
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .info {
+  
+  
+  
+  font-size: 15px;
+  
+  
+  
+  }
+  
+  
+  
+  
+  
+  .chart{
+  
+  
+  
+  margin: 10px;
+  
+  
+  
+  width: 100%;
+  
+  
+  
+  height: 420px;
+  
+  
+  
+  background-color: #E6E6FA;
+  
+  
+  
+  border-radius:10px;
+  
+  
+  
+  
+  
+  }
+  
+  
+  
+  .chartp
+  
+  
+  
+  {
+  
+  
+  
+  width : 550;
+  
+  
+  
+  height : 400;
+  
+  
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  img {
+  
+  
+  
+  margin-top: 5px;
+  
+  
+  
+  height: 30px;
+  
+  
+  
+  width: 30px;
+  
+  
+  
+  }
+  
+  
+  
+  google-chart{
+  
+  position: absolute;
+  
+  z-index: 20;
+  
+  }
+  
+  mat-spinner
+  
+  {
+  
+  position: absolute;
+  
+  margin-left: 14rem;
+  
+  margin-top: 6rem;
+  
+  z-index: 1;
+  
+  }

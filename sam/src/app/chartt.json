@@ -1,0 +1,638 @@
+{"chartt": [
+
+  {
+  
+  "id": 1,
+  
+  "Product_Name": "Adobe Photoshop",
+  
+  "authorized": 34,
+  
+  "unauthorized": 23,
+  
+  "unmanaged": 34,
+  
+  "risk_cost": 233,
+  
+  "risk_entitlement": 22,
+  
+  "no_of_installations": 20,
+  
+  "licensed_inst": 10,
+  
+  "unlicensed_inst": 10,
+  
+  "License_Name": "Photoshop",
+  
+  "License_Type": "Proprietary",
+  
+  "Publisher_Name": "Adobe",
+  
+  "Software_Type": "Application",
+  
+  "Subtype": "Shareware",
+  
+  "Software_Category": "Graphics",
+  
+  "Compliance_status": "Yes",
+  
+  "Total_License": 100,
+  
+  "Consumed": 100
+  
+  },
+  
+  {
+  
+  "id": 2,
+  
+  "Product_Name": "Tomcat",
+  
+  "authorized": 67,
+  
+  "unauthorized": 56,
+  
+  "unmanaged": 34,
+  
+  "risk_cost": 675,
+  
+  "risk_entitlement": 232,
+  
+  "no_of_installations": 60,
+  
+  "licensed_inst": 40,
+  
+  "unlicensed_inst": 20,
+  
+  "License_Name": "Apache",
+  
+  "License_Type": "Proprietary",
+  
+  "Publisher_Name": "Apache",
+  
+  "Software_Type": "Media",
+  
+  "Subtype": "Freeware",
+  
+  "Software_Category": "Operating System",
+  
+  "Compliance_status": "Yes",
+  
+  "Total_License": 100,
+  
+  "Consumed": 100
+  
+  },
+  
+  {
+  
+  "id": 3,
+  
+  "Product_Name": "Blender",
+  
+  "authorized": 45,
+  
+  "unauthorized": 56,
+  
+  "unmanaged": 67,
+  
+  "risk_cost": 623,
+  
+  "risk_entitlement": 256,
+  
+  "no_of_installations": 45,
+  
+  "licensed_inst": 30,
+  
+  "unlicensed_inst": 15,
+  
+  "License_Name": "Blender",
+  
+  "License_Type": "GNU General Public License",
+  
+  "Publisher_Name": "Oracle",
+  
+  "Software_Type": "Application",
+  
+  "Subtype": "Utility",
+  
+  "Software_Category": "Graphics",
+  
+  "Compliance_status": "No",
+  
+  "Total_License": 100,
+  
+  "Consumed": 60
+  
+  },
+  
+  {
+  
+  "id": 4,
+  
+  "Product_Name": "WinRar",
+  
+  "authorized": 23,
+  
+  "unauthorized": 34,
+  
+  "unmanaged": 34,
+  
+  "risk_cost": 45,
+  
+  "risk_entitlement": 56,
+  
+  "no_of_installations": 23,
+  
+  "licensed_inst": 60,
+  
+  "unlicensed_inst": 40,
+  
+  "License_Name": "WinRar",
+  
+  "License_Type": "EULA",
+  
+  "Publisher_Name": "Google",
+  
+  "Software_Type": "Application",
+  
+  "Subtype": "something",
+  
+  "Software_Category": "Shareware",
+  
+  "Compliance_status": "Yes",
+  
+  "Total_License": 100,
+  
+  "Consumed": 100
+  
+  },
+  
+  {
+  
+  "id": 5,
+  
+  "authorized": 45,
+  
+  "unauthorized": 25,
+  
+  "unmanaged": 36,
+  
+  "risk_cost": 454,
+  
+  "risk_entitlement": 565,
+  
+  "no_of_installations": 56,
+  
+  "licensed_inst": 65,
+  
+  "unlicensed_inst": 35,
+  
+  "Product_Name": "MySQL",
+  
+  "License_Name": "MySQL",
+  
+  "License_Type": "Proprietary",
+  
+  "Publisher_Name": "Oracle",
+  
+  "Software_Type": "Application",
+  
+  "Subtype": "Freeware",
+  
+  "Software_Category": "Utility",
+  
+  "Compliance_status": "No",
+  
+  "Total_License": 100,
+  
+  "Consumed": 110
+  
+  },
+  
+  {
+  
+  "id": 6,
+  
+  "Product_Name": "VLC Media Player",
+  
+  "authorized": 45,
+  
+  "unauthorized": 56,
+  
+  "unmanaged": 58,
+  
+  "risk_cost": 452,
+  
+  "risk_entitlement": 243,
+  
+  "no_of_installations": 100,
+  
+  "licensed_inst": 60,
+  
+  "unlicensed_inst": 40,
+  
+  "License_Name": "VLC Media Player",
+  
+  "License_Type": "GNU General Public License",
+  
+  "Publisher_Name": "Oracle",
+  
+  "Software_Type": "Application Software",
+  
+  "Subtype": "Shareware",
+  
+  "Software_Category": "Multimedia",
+  
+  "Compliance_status": "Yes",
+  
+  "Total_License": 100,
+  
+  "Consumed": 100
+  
+  },
+  
+  {
+  
+  "id": 7,
+  
+  "Product_Name": "MindPlay",
+  
+  "authorized": 34,
+  
+  "unauthorized": 45,
+  
+  "unmanaged": 53,
+  
+  "risk_cost": 445,
+  
+  "risk_entitlement": 343,
+  
+  "no_of_installations": 120,
+  
+  "licensed_inst": 69,
+  
+  "unlicensed_inst": 51,
+  
+  "License_Name": "MindPlay",
+  
+  "License_Type": "GNU",
+  
+  "Publisher_Name": "Apache",
+  
+  "Software_Type": "Application",
+  
+  "Subtype": "Utility",
+  
+  "Software_Category": "Freeware",
+  
+  "Compliance_status": "N0",
+  
+  "Total_License": 80,
+  
+  "Consumed": 50
+  
+  },
+  
+  {
+  
+  "id": 8,
+  
+  "authorized": 47,
+  
+  "unauthorized": 36,
+  
+  "unmanaged": 67,
+  
+  "risk_cost": 254,
+  
+  "risk_entitlement": 464,
+  
+  "no_of_installations": 50,
+  
+  "licensed_inst": 22,
+  
+  "unlicensed_inst": 28,
+  
+  "Product_Name": "Bios Driver",
+  
+  "License_Name": "System Builder",
+  
+  "License_Type": "Commercial Driver License",
+  
+  "Publisher_Name": "Adobe",
+  
+  "Software_Type": "Programming",
+  
+  "Subtype": "Utility",
+  
+  "Software_Category": "Browser",
+  
+  "Compliance_status": "Yes",
+  
+  "Total_License": 100,
+  
+  "Consumed": 100
+  
+  },
+  
+  {
+  
+  "id": 9,
+  
+  "authorized": 56,
+  
+  "unauthorized": 67,
+  
+  "unmanaged": 64,
+  
+  "risk_cost": 224,
+  
+  "risk_entitlement": 454,
+  
+  "no_of_installations": 50,
+  
+  "licensed_inst": 22,
+  
+  "unlicensed_inst": 28,
+  
+  "Product_Name": "Google Chrome",
+  
+  "License_Name": "Freeware",
+  
+  "License_Type": "MIT",
+  
+  "Publisher_Name": "Google",
+  
+  "Software_Type": "Application",
+  
+  "Subtype": "Browser",
+  
+  "Software_Category": "Utility",
+  
+  "Compliance_status": "No",
+  
+  "Total_License": 100,
+  
+  "Consumed": 140
+  
+  },
+  
+  {
+  
+  "id": 10,
+  
+  "authorized": 47,
+  
+  "unauthorized": 36,
+  
+  "unmanaged": 673,
+  
+  "risk_cost": 254,
+  
+  "risk_entitlement": 464,
+  
+  "no_of_installations": 50,
+  
+  "licensed_inst": 22,
+  
+  "unlicensed_inst": 28,
+  
+  "Product_Name": "NetBeans",
+  
+  "License_Name": "Apache License 2.0",
+  
+  "License_Type": "GNU General Public License",
+  
+  "Publisher_Name": "Oracle",
+  
+  "Software_Type": "Programming",
+  
+  "Subtype": "Freeware",
+  
+  "Software_Category": "Browser",
+  
+  "Compliance_status": "Yes",
+  
+  "Total_License": 100,
+  
+  "Consumed": 100
+  
+  },
+  
+  {
+  
+  "id": 11,
+  
+  "authorized": 46,
+  
+  "unauthorized": 25,
+  
+  "unmanaged": 67,
+  
+  "risk_cost": 225,
+  
+  "risk_entitlement": 363,
+  
+  "no_of_installations": 46,
+  
+  "licensed_inst": 34,
+  
+  "unlicensed_inst": 36,
+  
+  "Product_Name": "Tally ERP 9",
+  
+  "License_Name": "ERP 9 License",
+  
+  "License_Type": "Private(Single User)License",
+  
+  "Publisher_Name": "Adobe",
+  
+  "Software_Type": "Application",
+  
+  "Subtype": "Shareware",
+  
+  "Software_Category": "Shareware",
+  
+  "Compliance_status": "Yes",
+  
+  "Total_License": 100,
+  
+  "Consumed": 100
+  
+  },
+  
+  {
+  
+  "id": 12,
+  
+  "authorized": 45,
+  
+  "unauthorized": 34,
+  
+  "unmanaged": 47,
+  
+  "risk_cost": 444,
+  
+  "risk_entitlement": 444,
+  
+  "no_of_installations": 232,
+  
+  "licensed_inst": 45,
+  
+  "unlicensed_inst": 28,
+  
+  "Product_Name": "MS Word",
+  
+  "License_Name": "Apache",
+  
+  "License_Type": "Proprietary",
+  
+  "Publisher_Name": "Apache",
+  
+  "Software_Type": "Media",
+  
+  "Subtype": "Shareware",
+  
+  "Software_Category": "Shareware",
+  
+  "Compliance_status": "No",
+  
+  "Total_License": 100,
+  
+  "Consumed": 120
+  
+  },
+  
+  {
+  
+  "id": 13,
+  
+  "authorized": 56,
+  
+  "unauthorized": 74,
+  
+  "unmanaged": 54,
+  
+  "risk_cost": 254,
+  
+  "risk_entitlement": 464,
+  
+  "no_of_installations": 57,
+  
+  "licensed_inst": 24,
+  
+  "unlicensed_inst": 27,
+  
+  "Product_Name": "WaveMaker",
+  
+  "License_Name": "Apache License",
+  
+  "License_Type": "EULA",
+  
+  "Publisher_Name": "Adobe",
+  
+  "Software_Type": "Media",
+  
+  "Subtype": "Browser",
+  
+  "Software_Category": "Browser",
+  
+  "Compliance_status": "Yes",
+  
+  "Total_License": 100,
+  
+  "Consumed": 100
+  
+  },
+  
+  {
+  
+  "id": 14,
+  
+  "authorized": 74,
+  
+  "unauthorized": 32,
+  
+  "unmanaged": 64,
+  
+  "risk_cost": 222,
+  
+  "risk_entitlement": 444,
+  
+  "no_of_installations": 500,
+  
+  "licensed_inst": 200,
+  
+  "unlicensed_inst": 300,
+  
+  "Product_Name": "Free Youtube Downloader",
+  
+  "License_Name": "Open-Source License",
+  
+  "License_Type": "GNU General Public License",
+  
+  "Publisher_Name": "Adobe",
+  
+  "Software_Type": "Application",
+  
+  "Subtype": "Freeware",
+  
+  "Software_Category": "Shareware",
+  
+  "Compliance_status": "N0",
+  
+  "Total_License": 100,
+  
+  "Consumed": 140
+  
+  },
+  
+  {
+  
+  "authorized": 85,
+  
+  "unauthorized": 64,
+  
+  "unmanaged": 63,
+  
+  "risk_cost": 253,
+  
+  "risk_entitlement": 564,
+  
+  "no_of_installations": 666,
+  
+  "licensed_inst": 233,
+  
+  "unlicensed_inst": 332,
+  
+  "Product_Name": "Notepad",
+  
+  "Software_Type": "Media",
+  
+  "Software_Category": "Browser",
+  
+  "License_Name": "Notepad2.0",
+  
+  "License_Type": "EULA",
+  
+  "Compliance_status": "YES",
+  
+  "Publisher_Name": "Apache",
+  
+  "Description": "",
+  
+  "Total_License": 50,
+  
+  "Consumed": 50,
+  
+  "Subtype": "Freeware",
+  
+  "id": 15
+  
+  }
+  
+  ]
+}
+  
+  

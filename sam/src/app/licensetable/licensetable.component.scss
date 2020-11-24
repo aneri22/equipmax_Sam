@@ -1,0 +1,488 @@
+@import "src/theme.scss";
+
+@import "src/app/app.component.scss";
+
+
+
+
+.info {
+    width: 1000px;
+    margin-top: 10px;
+    margin: 20px;
+    text-align: center;
+        table{
+        width: 600px;
+        border:0.25px solid white;
+        height: 350px;
+        box-shadow: 3px 11px 22px 0px rgba(0,0,0,0.53);
+            tr:nth-child(even) {
+                background-color: lavender;
+            }
+            th {
+                font-size:15px;
+                font-weight: bold;
+                text-align: center;          
+                color: white;           
+                padding:10;        
+                }
+                
+            tr {
+                margin: 20px;
+                width: 20px; 
+                }
+            td {
+                text-align: center;
+                padding: 0;
+                font-size: 10px;
+                }
+        }
+    label{
+        font-size: 14px;
+    }
+}
+
+.addlicensebtn{
+    margin-top:10px;
+    margin-left:10px;
+}
+
+.list_license{
+    width: 800px;
+        table {
+            th{
+            text-align: center;
+            font-size:15px;
+            font-weight: bold;
+            text-align: left;
+            color: white;
+            }
+            tr:nth-child(even) {
+            background-color: lavender;
+            }
+            td {
+                text-align: center;
+            }
+        }
+    
+    }
+    
+    
+
+
+.alloclicense{
+    display: flex;
+
+    .users{
+        width: 800px;
+            th {
+                font-size:15px;
+                font-weight: bold;
+                text-align: left;
+                color: white;
+                padding: 1px;
+                padding: 10px;  
+            }
+            tr:nth-child(even) {
+                background-color: lavender;
+            }
+    
+    }
+
+
+    .allocateform{
+        margin: 10px;
+        label {
+            font-size: 15px;
+        }
+        .allocatebtn{
+            margin-left: 190px;
+        }
+    
+        .selectLicense{
+            width: 200px;
+            height: 40px;
+        }
+        
+        .error {
+            font-size: 12px;
+            color: red;
+        }
+
+    }
+   
+}
+
+
+.exportbtn{
+    margin: 10px;
+    margin-left: 0;
+    width: 40px;
+}
+
+
+.installations {
+    height: 1200px;
+    
+        .inst_count {
+            display: flex;
+            margin-bottom: 20px;
+            .instable {
+                width:800px;
+              
+                th {
+                    font-size:15px;
+                    font-weight: bold;
+                    text-align: left;
+                    color:white;
+                    padding: 10px;
+                } 
+                tr:nth-child(even) {
+                    background-color: lavender;
+                }
+            }
+            .displayv {
+                padding-left:60px; 
+                display: flex;
+                flex-direction: column;
+                height: 400px;
+                button {
+                    padding: 20px;
+                    font-size: 1.5rem;
+                    width:80px;
+                    height: 80px;
+                }
+                .inst_heads{
+                    margin-left: 30px;
+                }  
+            }        
+        }    
+    }
+    
+       
+    
+    input[type='text']{
+
+        width: 180px;
+        
+        border: 1px solid #dce0d4;
+        
+        border-radius: 5px;
+        
+        padding: 8px;
+        
+    }
+
+
+
+    .mat-form-field-outline-start, .mat-form-field-outline-end {
+        border-radius: 0 !important;
+    }
+
+    .mat-tab-header{
+        background-color: lavender !important;
+    }
+        
+
+
+
+
+// #expbtn {
+//     margin-left: 15px;
+//     margin-top: 10px;
+//     width: 120px;
+//     height: 40px;
+//     font-size: 14px;
+// }
+
+
+
+.disable_class {
+    background-color: lightgray;
+}
+
+
+
+// .select {
+//     margin: 10px;
+// }
+
+
+
+// .historytabs {
+//     margin-top: 27px;
+//     float: left;
+//     border: 1px solid #ccc;
+//     background-color: #fff;
+//     width: 8%;
+//     height: 118px;
+
+//     button {
+//         display: block;
+//         background-color: inherit;
+//         color: black;
+//         padding: 22px 16px;
+//         width: 100%;
+//         border: none;
+//         outline: none;
+//         text-align: left;
+//         cursor: pointer;
+//         transition: 0.3s;
+//     }
+//     button:hover {
+//         background-color: #ddd;
+//       }
+//       button.active {
+//         background-color: #5680e9;
+//         color: white;
+//       }
+
+// }
+// .tabcontent{
+//     box-sizing: border-box; 
+//     float: left;
+//     padding: 0px 12px;
+
+// }
+
+
+
+
+
+.workstation {
+width: 800px;
+margin-top: 10px;
+margin: 10px;
+text-align: center;
+    table {
+        width: 800px;
+        th {
+            font-size:15px;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            padding:10;
+        }
+        tr:nth-child(even) {
+            background-color: lavender;
+        }
+        td {
+            text-align: center;
+            padding: 0;
+        }
+    }
+}
+
+
+.histtab{
+    display: flex;
+    height: 380px;
+}
+
+
+
+
+
+.softhist_table {
+    margin-top: 20px;
+    width: 800px;
+    text-align: center;
+    height: 600px;
+    margin-left: 10px;
+    table{
+        width: 800px;
+    }
+
+    th {
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        padding: 7px;
+    }
+    tr:nth-child(even) {
+        background-color: lavender;
+    }
+    
+    td {
+        text-align: center;
+    }
+}
+
+
+.softhist_table mat-paginator{
+    width: 800px;
+}
+
+
+.hist_table{
+
+width: 800px;
+margin-left: 10px;
+
+table {
+width: 800px;
+margin-top: 20px;
+text-align: center;
+}
+
+th {
+    font-size:15px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    padding: 1px;
+    padding: 6px;
+    
+    }
+
+.hist_table tr:nth-child(even) {
+
+    background-color: lavender;
+    
+}
+
+tr:nth-child(even) {
+    background-color: lavender;
+}
+
+td {
+    text-align: center;
+}
+
+}
+
+
+
+
+
+
+
+
+.cards{
+
+margin-left: 20px;
+
+}
+
+
+
+
+.mat-card-title {
+
+text-align: center;
+
+}
+
+
+
+
+
+.tabs {
+
+margin: 10px;
+
+margin-left: 30px;
+
+padding: 20px;
+
+}
+
+
+
+.allocate{
+
+// margin-left: 100px;
+
+width: 1000px;
+
+text-align: center;
+
+}
+
+
+
+span:hover {
+
+text-decoration: none;
+
+}
+
+
+
+
+
+.place
+{
+
+margin-top:90px;
+background-color:#4c91ff;
+color: white;
+// font-weight: bold;
+}
+
+
+
+mat-card{
+margin-top: 60px;
+max-width: 250px;
+font-size: 18px;
+text-align: center;
+}
+
+
+
+.history{
+display: flex;
+}
+
+
+
+.userhorizontal{
+display: flex;
+
+}
+
+
+
+
+.notassinged{
+    width: 800px;
+    height: 400px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.notfoundbox{
+    background-color: #f8f8f8;
+  
+    height: 200px;
+    width: 400px;
+    padding: 20px;
+    border: 1px solid lightgrey;
+
+    h5{
+        margin-bottom: 40px;
+    }
+
+    // p{
+    //     color: lightgray;
+    // }
+}
+
+
+.innertabs ::ng-deep .mat-tab-header {
+    border-bottom: none;
+   
+    // background-color:  #f8f8f8;
+    width: 325px;
+    margin-left: 40%;
+}
+
+
+.innertabs .mat-tab-header:hover {
+    background-color: lavender;
+}
+
+

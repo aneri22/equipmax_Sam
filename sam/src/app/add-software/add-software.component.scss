@@ -1,0 +1,371 @@
+@import "src/theme.scss";
+
+// @import "src/app/app.component.scss";
+
+
+mat-card{
+    height: 450px;
+}
+
+
+
+
+
+input[type='number']{
+
+width: 180px;
+
+border: 1px solid #dce0d4;
+
+margin: 5px;
+
+margin-top:10px; 
+
+border-radius: 5px;
+
+padding: 5px;
+
+height: 20px;
+
+-moz-appearance:textfield;
+
+
+}
+
+
+
+
+
+
+a:hover{
+
+cursor: pointer;
+
+text-decoration: underline;
+
+
+
+}
+
+
+.addForm {
+
+
+
+margin: 5px;
+
+
+
+text-align: center;
+
+
+
+// box-shadow: 3px 11px 22px 0px rgba(0,0,0,0.53);
+
+
+
+max-width: 100%;
+
+
+
+}
+
+.error{
+
+color: red;
+
+}
+
+textarea{
+
+border: 1px solid #dce0d4;
+
+border-radius: 5px;
+
+padding: 5px;
+
+width: 195px;
+
+height: 35px;
+
+margin: 5px;
+
+//margin-top:10px; 
+
+}
+
+
+
+
+
+
+
+
+select{
+
+
+
+border: 1px solid #dce0d4;
+
+
+
+border-radius: 5px;
+
+
+
+// margin: 5px;
+
+
+
+padding: 5px;
+
+
+
+// width: max-content;
+
+
+
+}
+
+
+
+label{
+
+
+
+font-size: 14px;
+
+
+
+color: black;
+
+
+
+}
+
+
+
+
+
+
+
+input[type='text']{
+
+border: 1px solid #dce0d4;
+
+border-radius: 5px;
+
+padding: 5px;
+
+width: 180px;
+
+height: 20px;
+
+margin: 5px;
+
+margin-top:10px; 
+
+
+
+}
+
+
+
+select{
+
+border: 1px solid #dce0d4;
+
+border-radius: 5px;
+
+padding: 5px;
+
+width: 180px;
+
+height: 30px;
+
+margin: 5px;
+
+margin-top:10px; 
+
+
+
+}
+
+.select
+
+
+{
+
+width: 190px;
+
+}
+
+
+
+// mat-select{
+
+// width: 180px;
+
+// height: 15px;
+
+// }
+
+.desc
+
+{
+
+
+width: 180px;
+
+border: 1px solid #dce0d4;
+
+margin: 5px;
+
+border-radius: 5px;
+
+padding: 5px;
+
+height: 20px;
+
+}
+
+
+
+
+
+input[type='button']{
+
+
+
+background-color: mat-color($reddish-app-accent);
+
+
+
+color: white;
+
+
+
+font-size: 14px; 
+
+
+
+border: 0px solid #dce0d4;
+
+
+
+border-radius: 5px;
+
+
+
+margin: 5px;
+
+
+
+padding: 5px;
+
+
+
+padding-left: 15px;
+
+
+
+padding-right: 15px;
+
+
+
+cursor: pointer;
+
+
+
+align-content: center;
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+input[type='button']:hover{
+background-color: rgb(55, 102, 133);
+}
+
+
+
+.stylepopupbuttonconfirm{
+background-color: mat-color($reddish-app-primary);
+color: white;
+font-size: 14px; 
+}
+
+
+
+
+
+.stylepopupbuttoncancel{
+margin-left: 10px;
+background-color: rgb(179, 41, 37);
+color: white;
+font-size: 14px;
+}
+
+td {
+width: 140px;
+
+height: 20px;
+
+padding-bottom:2px; 
+
+text-align: left;
+
+}
+
+
+
+
+
+a{
+
+
+text-decoration: none;
+font-size: 14px; 
+
+}
+
+
+
+
+
+
+
+button{
+
+
+
+max-width: 100px;
+
+
+
+margin-left: 50%;
+
+
+
+float: left;
+
+
+
+margin: 0;
+
+}
+p{
+    font-size: 11px;
+}

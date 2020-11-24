@@ -1,0 +1,369 @@
+<div class="addForm">
+
+  <mat-card>
+
+    <mat-card-header>
+
+      <mat-card-title>
+
+        <h4 class="card-title col-for-primary">Add New license for {{ softwarename }}</h4>
+
+      </mat-card-title>
+
+    </mat-card-header>
+
+    <form [formGroup]="addlicenseform" (ngSubmit)="submitForm()">
+
+
+      <table cellspacing=0>
+
+        <tr>
+
+          <td>
+
+            <label>
+
+              License Name:
+
+            </label>
+
+          </td>
+
+          <td>
+
+            <input id="license_name" type="text" placeholder="License name" formControlName="license_name" required />
+          </td>
+          <td style="width:130px;">
+            <p class="error"
+              *ngIf="addlicenseform.get('license_name').invalid && addlicenseform.get('license_name').touched">Name
+
+              is required.</p>
+
+          </td>
+
+
+          <td><label>
+
+              License Type:
+
+            </label></td>
+
+          <td>
+
+
+            <select formControlName="license_type" class="select" name="license_type">
+
+              <option value="" selected data-default>
+
+                Select Type
+
+              </option>
+
+              <option *ngFor="let item of LicenTypes" [value]="item.Ltype_ID">{{item.Ltype_Name}}</option>
+
+
+            </select>
+
+          </td>
+
+          <td style="width:130px;">
+
+            <p class="error"
+              *ngIf="addlicenseform.get('license_type').invalid && addlicenseform.get('license_type').touched">Please
+
+              select license type.</p>
+
+          </td>
+
+
+        </tr>
+
+        <tr>
+
+          <td> <label>
+
+              Manufacturer Name:
+
+            </label></td>
+
+          <td>
+
+            <input id="manufacturer_name" type="text" formControlName="manufacturer_name" placeholder="Select"
+              required />
+          </td>
+          <td style="width:130px;">
+            <p class="error"
+              *ngIf="addlicenseform.get('manufacturer_name').errors?.required && addlicenseform.get('manufacturer_name').touched ">
+
+              Manufacturer
+
+              is required.</p>
+
+
+          </td>
+
+          
+          <td>
+
+              <label>
+  
+                Enter Vendor Name:
+  
+              </label>
+  
+            </td>
+  
+            <td>
+  
+  
+  
+              <input type="text" formControlName="vendor_name" placeholder="Vendor Name" required />
+            </td>
+            <td style="width:130px;">
+              <p class="error"
+                *ngIf="addlicenseform.get('vendor_name').invalid && addlicenseform.get('vendor_name').touched">Vendor Name
+  
+                is required.</p>
+  
+            </td>
+
+        </tr>
+
+        <tr>
+
+          <td>
+
+            <label>
+
+              Enter License Key:
+
+            </label>
+
+          </td>
+
+          <td>
+
+            <input type="text" formControlName="license_key" placeholder="license key" required />
+          </td>
+          <td style="width:130px;">
+            <p class="error"
+              *ngIf="addlicenseform.get('license_key').invalid && addlicenseform.get('license_key').touched">License Key
+
+              is required.</p>
+
+          </td>
+
+          
+          <td><label>
+
+              Purchased cost in Rs:
+
+            </label></td>
+
+          <td>
+
+
+
+            <input type="number" min=1 step="0.01" oninput="validity.valid||(value='');" formControlName="purchase_cost"
+              placeholder="Enter Purchase cost" required />
+          </td>
+          <td style="width:130px;">
+            <p class="error"
+              *ngIf="addlicenseform.get('purchase_cost').errors?.required && addlicenseform.get('purchase_cost').touched">
+
+              Enter
+
+              cost</p>
+
+
+
+          </td>
+
+
+        </tr>
+
+        <tr>
+
+
+          <td><label>
+
+              Purchased For:
+
+            </label></td>
+
+          <td>
+            <select formControlName="department" class="select" required>
+
+              <option value="" selected data-default>
+
+                Select Department
+
+              </option>
+
+              <option value="IT">IT</option>
+
+              <option value="Finance">Finance</option>
+
+              <option value="Accounts">Accounts</option>
+
+              <option value="CS">CS</option>
+
+              <option value="Sales">Sales</option>
+
+            </select>
+          </td>
+
+          <td style="width:130px;">
+            <p class="error"
+              *ngIf="addlicenseform.get('department').invalid && addlicenseform.get('department').touched">Select
+
+              Department</p>
+          </td>
+          <td>
+              <label> Total Licensed </label>
+            </td>
+            <td>
+              <input type="number" formControlName="Total_License" min=1 oninput="validity.valid||(value='');"
+                placeholder="Enter no" name="Total_License" required />
+            </td>
+            <td>
+              <p class="error"
+                *ngIf="addlicenseform.get('Total_License').invalid && addlicenseform.get('Total_License').touched">
+                * Total
+                License
+                is required.</p>
+            </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Allocated to:</label>
+          </td>
+
+          <td>
+
+            <select class="select" formControlName="allocate_location" required>
+
+              <option value="" selected data-default>
+
+                Select
+
+              </option>
+              <option *ngFor="let item of LocationTypes" [value]="item.Loc_ID">{{item.Allo_Loc}}</option>
+
+            </select>
+
+          </td>
+
+          <td style="width:130px;">
+            <p class="error"
+              *ngIf="addlicenseform.get('allocate_location').invalid && addlicenseform.get('allocate_location').touched">
+
+              Select Location</p>
+
+
+
+          </td>
+
+          <td>
+
+            <label>Installation Date:
+
+            </label>
+
+          </td>
+
+          <td colspan="2">
+
+            <mat-form-field [floatLabel]="'never'">
+
+              <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="picker">
+
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+
+              <mat-datepicker #picker></mat-datepicker>
+
+            </mat-form-field><br>
+
+          </td>
+
+
+        </tr>
+
+
+        <tr>
+
+          <td>
+
+            <label>Expiration Date:</label>
+
+          </td>
+
+          <td colspan="2">
+
+            <mat-form-field [floatLabel]="'never'">
+
+
+              <input matInput [matDatepicker]="picker2" [min]="addlicenseform.controls.picker.value"
+                placeholder="Choose a date" formControlName="picker2">
+
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+
+              <mat-datepicker #picker2></mat-datepicker>
+
+            </mat-form-field>
+
+          </td>
+
+          <td>
+
+
+
+            <label>
+
+              Description:
+
+            </label>
+
+          </td>
+
+          <td>
+
+            <textarea class="example-full-width" formControlName="Description" #message maxlength="255"
+              placeholder="Description"
+              style="border:1px solid lightgrey; border-radius: 5px; height: 50px; width: 195px;">
+
+
+
+  </textarea>
+
+          </td>
+
+        </tr>
+
+      </table>
+
+
+
+      <mat-card-actions>
+
+
+
+        <button [disabled]="!addlicenseform.valid" mat-raised-button class="stylepopupbuttonconfirm">
+
+          Add License
+
+        </button>
+
+        <button mat-raised-button (click)="goBack()" class="stylepopupbuttoncancel" routerLink="/licensetable/ptype/id">
+
+          Cancel
+
+        </button>
+
+      </mat-card-actions>
+
+    </form>
+
+  </mat-card>
+
+</div>

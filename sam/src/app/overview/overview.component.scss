@@ -1,0 +1,62 @@
+@import "src/theme.scss";
+@import "src/app/app.component.scss";
+
+
+.cards
+
+{
+
+display: flex;
+
+}
+
+.mat-card-title {
+
+text-align: center;
+
+}
+
+
+// span {
+
+// color: crimson;
+
+// }
+
+.place
+
+{
+
+margin-top:90px;
+
+background-color:#4c91ff;
+
+color: white;
+
+// font-weight: bold;
+
+}
+
+mat-card{
+
+margin-top: 60px;
+
+max-width: 250px;
+
+font-size: 18px;
+
+text-align: center;
+
+}
+
+.chart
+{
+    min-width: 33.33%;
+    width: 400px;
+}
+
+ .row2{
+
+max-width: 45%;
+width: 300px;
+}

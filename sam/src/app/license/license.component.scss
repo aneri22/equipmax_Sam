@@ -1,0 +1,518 @@
+@import "src/theme.scss";
+
+@import "src/app/app.component.scss";
+
+
+
+.users th {
+
+font-size:15px;
+
+font-weight: bold;
+
+text-align: left;
+
+color: white;
+
+padding: 1px;
+
+padding: 10px;
+
+
+
+
+
+}
+
+
+
+
+
+.users tr:nth-child(even) {
+
+background-color: lavender;
+
+}
+
+.allocate th {
+
+font-size:15px;
+
+font-weight: bold;
+
+text-align: left;
+
+color: white;
+
+padding: 1px;
+
+padding: 10px;
+
+
+
+}
+
+.allocate tr:nth-child(even) {
+
+background-color: lavender;
+
+}
+
+.installations th{
+
+font-size:15px;
+
+font-weight: bold;
+
+text-align: left;
+
+color:white;
+
+padding: 10px;
+
+
+}
+
+.inst_count {
+
+display: flex;
+
+margin-left: 10px;
+
+margin-bottom: 20px;
+
+margin-top:40px;
+
+
+
+}
+
+
+
+.inst_count button {
+
+padding: 20px 30px;
+
+font-size: 1.5rem;
+
+
+}
+
+
+
+.inst_heads{
+
+margin-left: 30px;
+
+
+}
+
+.displayv
+
+{
+
+padding-left:60px; 
+
+display: flex;
+
+flex-direction: column;
+
+// align-content: center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.installations .instable {
+
+//margin-right: 100px;
+
+width:900px;
+
+//justify-content: center;
+
+//margin-left:20px;
+
+}
+
+
+
+.installations tr:nth-child(even) {
+
+background-color: lavender;
+
+}
+
+
+
+.list_license{
+
+width: 1000px;
+
+}
+
+
+
+
+
+
+
+.list_license td {
+
+text-align: center;
+
+
+
+}
+
+.list_license th{
+
+text-align: center;
+
+}
+
+
+
+//.installations{
+
+// padding: 10px;
+
+//}
+
+.list_license tr:nth-child(even) {
+
+background-color: lavender;
+
+}
+
+
+
+.users{
+
+width: 1000px;
+
+//margin:auto;
+
+}
+
+
+
+// .workstation {
+
+// padding: 1px;
+
+// }
+
+
+
+.history{
+
+padding:10px;
+
+width:1000px;
+
+}
+
+
+
+// .history form {
+
+// // margin-left: 200px;
+
+// }
+
+.hist_table {
+
+width: 600px;
+
+//margin-left: 200px;
+
+//padding: 20px;
+
+// justify-content: center;
+
+
+
+}
+
+
+
+
+
+.workstation th {
+
+font-size:15px;
+
+font-weight: bold;
+
+text-align: center;
+
+color: white;
+
+padding:10;
+
+
+//padding: 1px;
+
+// padding: 6px;
+
+
+
+}
+
+
+
+.workstation tr:nth-child(even) {
+
+background-color: lavender;
+
+}
+
+
+
+.workstation td {
+
+text-align: center;
+
+padding: 0;
+
+
+}
+
+.workstation {
+
+width: 1000px;
+
+margin-top: 10px;
+
+margin: 20px;
+
+text-align: center;
+
+// //margin: auto;
+
+}
+
+
+
+
+
+.history th {
+
+font-size:15px;
+
+font-weight: bold;
+
+text-align: left;
+
+color: white;
+
+padding: 1px;
+
+padding: 6px;
+
+}
+
+.hist_table{
+
+margin-top: 20px;
+
+}
+
+.hist_table tr:nth-child(even) {
+
+background-color: lavender;
+
+}
+
+
+
+
+
+.list_license th {
+
+font-size:15px;
+
+font-weight: bold;
+
+text-align: left;
+
+color: white;
+
+
+
+
+
+}
+
+.allocate{
+
+width: 1000px;
+
+}
+
+
+
+.allocatelicense {
+
+height:150px;
+
+width:150px;
+
+
+
+
+
+}
+
+.allocatelicense button,.consumsedlicense button {
+
+padding: 30px;
+
+font-size: 30px;
+
+}
+
+
+
+.consumsedlicense {
+
+height:150px;
+
+width:150px;
+
+}
+
+
+
+
+
+.cards{
+
+margin-left: 20px;
+
+}
+
+
+
+.matpaginator{
+
+width:1000px;
+
+border:0.25px solid white;
+
+}
+
+
+
+
+
+.mat-card-title {
+
+text-align: center;
+
+}
+
+
+
+
+
+.tabs {
+
+
+
+margin: 10px;
+
+margin-left: 30px;
+
+padding: 20px;
+
+}
+
+
+
+.allocate{
+
+// margin-left: 100px;
+
+width: 1000px;
+
+text-align: center;
+
+}
+
+
+
+span:hover {
+
+text-decoration: none;
+
+}
+
+
+
+
+
+.place
+
+
+
+{
+
+
+
+margin-top:90px;
+
+
+
+background-color:#4c91ff;
+
+color: white;
+
+// font-weight: bold;
+
+}
+
+
+
+mat-card{
+
+
+
+margin-top: 60px;
+
+
+max-width: 250px;
+
+
+
+font-size: 18px;
+
+
+text-align: center;
+
+}
+
+
+
+.history{
+
+display: flex;
+
+}
+
+
+
+.userhorizontal{
+
+display: flex;
+
+}

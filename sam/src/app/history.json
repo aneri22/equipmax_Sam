@@ -1,0 +1,42 @@
+{"history":[
+ 
+    {    
+      "id":1,
+      "discovered_date": "2001-07-01",
+       "workstation": "Dell",
+       "user":"Sony",
+       "status":"installed"
+    },
+    
+    {
+      "id":2,
+    
+      "discovered_date": "2001-07-01",
+       "workstation": "Mac MiniMac Mini",
+       "user":"Vishal",
+       "status":"uninstalled"
+       
+    },
+
+ 
+    {    
+      "id":3,
+      "discovered_date": "2001-11-09",
+       "workstation": "HP",
+       "user":"Sneha",
+       "status":"uninstalled"
+    },
+    
+    {
+      "id":4,
+    
+      "discovered_date": "2006-05-09",
+       "workstation": "Apple Mac Pro",
+       "user":"Suresh",
+       "status":"installed"
+     
+       
+    }
+]
+}
+    

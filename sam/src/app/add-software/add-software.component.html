@@ -1,0 +1,266 @@
+<mat-card>
+  <div class="SoftwareAdd">
+    <select (change)="navigateTo($event.target.value)">
+      <option value="addForm" [selected]="addForm" ><b>Add Software</b></option>
+      <option value="addSuite"><b>Add  Software Suite</b></option>
+    </select>
+    <div *ngIf="show" class="addForm">
+      <form [formGroup]="addsoftwareForm" (ngSubmit)="submitForm()">
+        <table>
+          <tr>
+            <td> <label>
+                Software Name:             
+              </label>
+            </td>
+            <td>
+              <input type="text" formControlName="Product_Name" placeholder="Software Name" name="Product_Name"
+                required />
+            </td>
+            <td style="width:150px;">
+              <p class="error"
+                *ngIf="addsoftwareForm.get('Product_Name').invalid && addsoftwareForm.get('Product_Name').touched">
+                * Software Name is required.</p>
+            </td>
+            <td><label>Software Type: </label></td>
+            <td>
+              <select formControlName="Software_Type" class="select" name="Software_Type">
+                <option value="" selected data-default>
+                  Select type
+                </option>
+                <option *ngFor="let type of STypes" [value]="type.SType_ID">{{type.SType_Name}}</option>
+              </select>
+            </td>
+            <td>
+              <p class="error"
+                *ngIf="addsoftwareForm.get('Software_Type').invalid && addsoftwareForm.get('Software_Type').touched">
+                * Software Type
+                is required.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>
+                Software Subtype:
+              </label>
+            </td>
+            <td>
+              <select formControlName="Subtype" class="select" name="Subtype">
+                <option value="" selected data-default>
+                  Select subtype
+                </option>
+                <option *ngFor="let type of SubTypes" [value]="type.SubType_ID">{{type.SubType_Name}}</option>
+              </select>
+            </td>
+            <td>
+              <p class="error" *ngIf="addsoftwareForm.get('Subtype').invalid && addsoftwareForm.get('Subtype').touched">
+                * Subtype
+                is required.</p>
+            </td>
+            <td>
+              <label>
+                Software Category:
+              </label>
+            </td>
+            <td>
+              <select formControlName="Software_Category" class="select" name="Software_Category">
+                <option value="" selected data-default>
+                  Select Category
+                </option>
+                <option *ngFor="let type of SCategorys" [value]="type.SCategory_ID">{{type.SCategory_Name}}</option>
+              </select>
+            </td>
+            <td>
+              <p class="error"
+                *ngIf="addsoftwareForm.get('Software_Category').invalid && addsoftwareForm.get('Software_Category').touched">
+                * Category
+                is required.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Software Version:</label>
+            </td>
+            <td>
+              <input type="text" formControlName="Version" placeholder="Version" name="Compliance_status" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required />
+            </td>
+            <td>
+              <p class="error" *ngIf="addsoftwareForm.get('Version').invalid && addsoftwareForm.get('Version').touched">
+                * Mandatory.</p>
+            </td>
+            <td>
+              <label>Manufacturer Name:</label>
+            </td>
+            <td>
+              <input type="text" formControlName="manufacturer_name" placeholder="Enter Manufacturer" name="Consumed"
+                required />
+            </td>
+            <td>
+              <p class="error"
+                *ngIf="addsoftwareForm.get('manufacturer_name').invalid && addsoftwareForm.get('manufacturer_name').touched">
+                * Mandatory.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Publisher Name:
+              </label>
+            </td>
+            <td class="c">
+              <input type="text" formControlName="Publisher_Name" placeholder="Publisher Name" name="Publisher_Name"
+                required />
+            </td>
+            <td>
+              <p class="error"
+                *ngIf="addsoftwareForm.get('Publisher_Name').invalid && addsoftwareForm.get('Publisher_Name').touched">
+                * Publisher Name
+                is required.</p>
+            </td>
+            <td>
+              <label>
+                Description:
+              </label>
+            </td>
+            <td>
+              <textarea class="example-full-width" formControlName="Description" #message maxlength="255"
+                placeholder="Description" required
+                style="border:1px solid lightgrey; border-radius: 5px; height: 50px; width: 180px;">
+              </textarea>
+            </td>
+          </tr>
+        </table>
+        <button [disabled]="!addsoftwareForm.valid" mat-raised-button class="stylepopupbuttonconfirm">
+          Submit
+        </button>
+        <button mat-raised-button class="stylepopupbuttoncancel" routerLink="/software">
+          Cancel
+        </button>
+      </form>
+    </div>
+    <div *ngIf="!show" class="suiteForm">
+      <form [formGroup]="addsoftwaresuite" (ngSubmit)="submitSuiteForm()">
+        <table>
+          <tr>
+            <td> <label>
+                Software Suite Name:
+              </label></td>
+            <td><input type="text" formControlName="suite_name" placeholder="Enter name" name="suite_name" required />
+            </td>
+            <td style="width:120px;">
+              <p class="error"
+                *ngIf="addsoftwaresuite.get('suite_name').invalid && addsoftwaresuite.get('suite_name').touched">*
+                Mandatory.</p>
+            </td>
+            <td> <label>
+                Version:
+              </label></td>
+            <td><input type="text" formControlName="version" placeholder="Enter version" name="version"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required  /></td>
+            <td style="width:120px;">
+              <p class="error"
+                *ngIf="addsoftwaresuite.get('version').invalid && addsoftwaresuite.get('version').touched"> * Version is
+                required.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>
+                Software Category:
+              </label>
+            </td>
+            <td>
+              <select class="select" name="Software_category" formControlName="Software_category">
+                <option value="" selected data-default>
+                  Select Category
+                </option>
+                <option *ngFor="let type of SCategorys" [value]="type.SCategory_ID">{{type.SCategory_Name}}</option>
+              </select>
+            </td>
+            <td style="width:120px;">
+              <p class="error"
+                *ngIf="addsoftwaresuite.get('Software_category').invalid && addsoftwaresuite.get('Software_category').touched">
+                * Category is required.</p>
+            </td>
+            <td>
+              <label>Manufacturer Name:
+              </label>
+            </td>
+            <td>
+              <input type="text" formControlName="manufacturer_name" placeholder="Enter name" name="manufacturer_name"
+                required />
+            </td>
+            <td style="width:120px;">
+              <p class="error"
+                *ngIf="addsoftwaresuite.get('manufacturer_name').invalid && addsoftwaresuite.get('manufacturer_name').touched">
+                * Mandatory</p>
+            </td>
+          </tr>
+          <tr>
+            <td><label>
+                Software Type:
+              </label>
+            </td>
+            <td>
+              <select class="select" name="Software_Type" formControlName="Software_Type">
+                <option value="" selected data-default>
+                  Select type
+                </option>
+                <option *ngFor="let type of STypes" [value]="type.SType_ID">{{type.SType_Name}}</option>
+              </select>
+            </td>
+            <td style="width:120px;">
+              <p class="error"
+                *ngIf="addsoftwaresuite.get('Software_Type').invalid && addsoftwaresuite.get('Software_Type').touched">*
+                Software Type is required.</p>
+            </td>
+            <td>
+              <label>
+                Software Subtype:
+              </label>
+            </td>
+            <td>
+              <select class="select" name="Software_subtype" formControlName="Software_subtype">
+                <option value="" selected data-default>
+                  Select subtype
+                </option>
+                <option *ngFor="let type of SubTypes" [value]="type.SubType_ID">{{type.SubType_Name}}</option>
+              </select>
+            </td>
+            <td style="width:120px;">
+              <p class="error"
+                *ngIf="addsoftwaresuite.get('Software_subtype').invalid && addsoftwaresuite.get('Software_subtype').touched">
+                * Software Type is required.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Publisher Name:</label>
+            </td>
+            <td>
+              <input type="text" formControlName="publisher_name"  placeholder="Enter publisher" 
+                required />
+            </td>
+            <td>
+              <p class="error"
+                *ngIf="addsoftwaresuite.get('publisher_name').invalid && addsoftwaresuite.get('publisher_name').touched">
+                * Mandatory.</p>
+            </td>
+            <td>
+              <label>
+                Description:
+              </label>
+            </td>
+            <td>
+              <textarea class="example-full-width"  #message maxlength="255"
+                placeholder="Description" required
+                style="border:1px solid lightgrey; border-radius: 5px; height: 50px; width: 180px;">
+              </textarea>
+            </td>
+          </tr>
+        </table>
+        <button [disabled]="!addsoftwaresuite.valid" mat-raised-button class="stylepopupbuttonconfirm"> Add
+        </button>
+        <button mat-raised-button class="stylepopupbuttoncancel" routerLink="/software"> Cancel
+        </button>
+      </form>
+    </div>
+  </div>
+</mat-card>

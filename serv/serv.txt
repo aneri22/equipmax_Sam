@@ -1,0 +1,539 @@
+
+const mysql = require('mysql');
+const express=require('express');
+const bodyParser=require('body-parser');
+const cors=require('cors');
+const port = 5000;
+const app=express();
+
+app.use(bodyParser.json());
+
+app.use(cors());
+
+app.use(function(req,res,next){
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers","Origin, X-Requested-With,Content-Type,Accept");
+  next();
+});
+
+
+let mysqlConnection2 = mysql.createConnection({
+  host: '172.17.96.154',
+  user:'root',
+  password: 'root',
+  database: 'sam',
+  multipleStatements: true
+
+})
+
+mysqlConnection2.connect((err)=>{
+  if(!err){
+    console.log('DB connection successful!');
+  }
+  else{
+    console.log('Db Connection Failed : ' + JSON.stringify(err,undefined,2));
+  }
+})
+
+
+app.get('/api/stypes', (req,res)=>{
+  mysqlConnection2.query('Select * from SType',(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+})
+
+app.get('/api/subtypes', (req,res)=>{
+  mysqlConnection2.query('Select * from SubType',(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+})
+
+app.get('/api/scategory', (req,res)=>{
+  mysqlConnection2.query('Select * from SCategory',(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+})
+
+// app.get('/api/softwares', (req,res)=>{
+//     mysqlConnection2.query(`select DISTINCT s.Software_ID, s.Software_Name, s.Publisher_Name, l.License_Name, lt.Ltype_Name,
+//     st.SType_Name, su.SubType_Name, sc.SCategory_Name 
+//     from software s
+//     left outer join license l on s.Software_ID = l.Software_ID
+//     left outer join ltype lt on l.Ltype_ID = lt.Ltype_ID
+//     left outer join stype st on s.Stype_ID = st.Stype_ID
+//     left outer join subtype su on s.Subtype_ID = su.Subtype_ID
+//     left outer join scategory sc on s.SCategory_ID = sc.SCategory_ID
+//     group by s.Software_ID
+//     order by s.Software_ID
+//     ;
+//    `,(err,rows,fields)=>{
+//       if(!err){
+//         res.send(rows);
+//       }
+//       else{
+//         console.log(err);
+//       }
+//     })
+// });
+
+
+
+app.get('/api/softwares', (req,res)=>{
+  mysqlConnection2.query(`select s.Software_ID as sid, s.Software_Name as sname, s.Publisher_Name,s.ptype, l.License_Name, lt.Ltype_Name,
+  st.SType_Name, su.SubType_Name, sc.SCategory_Name 
+  from software s
+  left outer join license l on s.Software_ID = l.Software_ID
+  left outer join ltype lt on l.Ltype_ID = lt.Ltype_ID
+  left outer join stype st on s.Stype_ID = st.Stype_ID
+  left outer join subtype su on s.Subtype_ID = su.Subtype_ID
+  left outer join scategory sc on s.SCategory_ID = sc.SCategory_ID
+  group by sid
+  union all
+  select ss.Software_Suite_ID as sid, ss.Software_Suite_Name as sname, ss.Publisher_Name, ss.ptype, l.License_Name, lt.Ltype_Name,
+  st.Stype_Name, su.SubType_Name, sc.SCategory_Name
+  from software_suite ss
+  left outer join license l on ss.Software_Suite_ID = l.Software_Suite_ID
+  left outer join ltype lt on l.Ltype_ID = lt.Ltype_ID
+  left outer join stype st on ss.Stype_ID = st.Stype_ID
+  left outer join subtype su on ss.Subtype_ID = su.Subtype_ID
+  left outer join scategory sc on ss.SCategory_ID = sc.SCategory_ID
+  group by sid;
+  ;
+ `,(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+});
+
+app.get('/api/alloc', (req,res)=>{
+  mysqlConnection2.query('select allocation.Alloc_Id ,user.User_Name, workstation.Work_Name, user.Server_Name,user.Email_ID, user.Phone_number from workstation,user, allocation where  allocation.User_ID = user.User_ID AND workstation.work_ID = user.work_ID;',(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+});
+
+app.get('/api/User', (req,res)=>{
+  mysqlConnection2.query('select user.User_ID ,user.User_Name, workstation.Work_Name, user.Server_Name,user.Email_ID, user.Phone_number from workstation,user where workstation.work_ID = user.work_ID;',(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+});
+
+app.get('/api/Workstn', (req,res)=>{
+  mysqlConnection2.query('select workstation.work_ID,workstation.Work_Name,workstation.Server_Name,user.User_Name,workstation.no_of_instal,workstation.licen_no_instal,workstation.unlicen_no_instal from user,workstation where workstation.work_ID = user.work_ID; ',(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+});
+app.get('/api/instal', (req,res)=>{
+  mysqlConnection2.query('select installation.installation_ID, workstation.Work_Name, user.User_Name,  license.License_Key,ltype.Ltype_Name,license.License_Name from user, workstation,license,ltype,installation where installation.work_ID = workstation.work_ID And installation.User_ID= user.User_ID and license.Ltype_ID=ltype.Ltype_ID And installation.License_ID= license.License_ID ;',(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+});
+app.get('/api/history', (req,res)=>{
+  mysqlConnection2.query('select history.install_status,history.History_ID,history.Discovered,workstation.Work_Name,user.User_Name from history,user,workstation where history.User_ID=user.User_ID and history.work_ID=history.work_ID',(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+});
+
+
+app.get('/api/ssoft/:id',(req,res)=>{
+  let id = req.params.id;
+  mysqlConnection2.query(`select s.Software_ID, s.Software_Name, s.Publisher_Name,
+  st.SType_Name, su.SubType_Name, sc.SCategory_Name 
+  from software s
+  left outer join stype st on s.Stype_ID = st.Stype_ID
+  left outer join subtype su on s.Subtype_ID = su.Subtype_ID
+  left outer join scategory sc on s.SCategory_ID = sc.SCategory_ID
+  where s.Software_ID = ?;`,[id],(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+})
+
+app.get('/api/ssuite/:id',(req,res)=>{
+  let id = req.params.id;
+  mysqlConnection2.query(`select ss.Software_suite_ID, ss.Software_Suite_Name, ss.Publisher_Name,
+  st.SType_Name, su.SubType_Name, sc.SCategory_Name 
+  from software_suite ss
+  left outer join stype st on ss.Stype_ID = st.Stype_ID
+  left outer join subtype su on ss.Subtype_ID = su.Subtype_ID
+  left outer join scategory sc on ss.SCategory_ID = sc.SCategory_ID
+  where ss.Software_suite_ID = ${id};`,(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+})
+
+app.get('/api/slicense/:id',(req,res)=>{
+  let id = req.params.id;
+  mysqlConnection2.query(`select l.License_ID, l.Software_ID, s.Software_Name, s.Software_Version, l.Software_Suite_ID, s.Software_ID, l.License_Name, l.License_Key, l.Manufacturer_Name,
+  l.Purchase_Cost, l.Available_Count, l.Vendor_Name, lt.Ltype_Name from license l, Ltype lt, software s
+  where l.Ltype_ID = lt.Ltype_ID and l.Software_ID = s.Software_ID and l.License_ID = ${id};`,(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+  
+})
+
+
+app.get('/api/singlesoft/:id',(req,res)=>{
+  let id = req.params.id;
+ 
+  mysqlConnection2.query(`select * from software where software_ID = ${id};`,(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+})
+
+
+app.get('/api/license', (req,res)=>{
+    mysqlConnection2.query('Select License.License_ID, ltype.Ltype_Name, License.License_Name, License.License_Key  from License,ltype;',(err,rows,fields)=>{
+      if(!err){
+        res.send(rows);
+      }
+      else{
+        console.log(err);
+      }
+    })
+});
+
+
+app.get('/api/lilist/:id',(req,res)=>{
+  let id = req.params.id;
+  mysqlConnection2.query('Select License.License_ID, License.License_Name, Ltype.Ltype_Name, License.License_Key, License.active_status from License,Ltype where Ltype.Ltype_ID=License.Ltype_ID AND License.Software_ID = ?;',[id],(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+})
+
+app.get('/api/sulist/:id',(req,res)=>{
+  let id = req.params.id;
+  mysqlConnection2.query('Select License.License_ID, License.License_Name, Ltype.Ltype_Name, License.License_Key, License.active_status from License,Ltype where Ltype.Ltype_ID=License.Ltype_ID AND License.Software_Suite_ID = ?;',[id],(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+})
+
+
+
+
+
+app.get('/api/locationtype1', (req,res)=>{
+  mysqlConnection2.query('Select * from Locationtype',(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+});
+
+
+app.get('/api/licensetype1', (req,res)=>{
+  mysqlConnection2.query('Select * from ltype',(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+});
+
+
+app.get('/api/singlelicense/:id', (req,res)=>{
+  let id = req.params.id;
+  mysqlConnection2.query('Select * from license where License_ID=?',[id],(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+});
+
+app.get('/api/lastid',(req,res)=>{
+  mysqlConnection2.query(`select MAX(Software_ID) as id from software;`,(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+
+})
+
+app.get('/api/publishers',(req,res)=>{
+  mysqlConnection2.query(`select distinct Publisher_Name from software;`,(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+
+})
+
+app.get('/api/totalsoftwares',(req,res)=>{
+  mysqlConnection2.query(`select sum(installations) from software;`,(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+
+})
+
+
+
+
+app.put('/api/renew/:id',(req,res)=>{
+  let id = req.params.id;
+  let licensedate = req.body.License_Expiry_date;
+
+  mysqlConnection2.query(`UPDATE License SET  License_Expiry_date = ${mysqlConnection2.escape(licensedate)} WHERE License_ID = ${id};`,(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+});
+
+app.put('/api/upgrade/:id',(req,res)=>{
+  let id = req.params.id;
+  let softid = req.body.Software_ID;
+  let lname = req.body.License_Name;
+  let lmanufacture = req.body.Manufacturer_Name;
+  let lkey= req.body.License_Key;
+  let lvendor = req.body.Vendor_Name;
+  let lcost = req.body.Purchase_Cost;
+  let ltypeid = req.body.Ltype_ID;
+  let lcount = req.body.License_Count
+
+  let updatesql = `UPDATE License SET License_Name = '${lname}', Manufacturer_Name = '${lmanufacture}'
+  , License_Key = '${lkey}', Vendor_Name = '${lvendor}', Purchase_Cost = ${lcost}, Ltype_ID = ${ltypeid},
+  Available_Count = ${lcount}, Software_ID = ${softid} where License_ID = ${id};`
+  mysqlConnection2.query(updatesql,(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+
+})
+
+
+app.put('/api/deletelicense/:id',(req,res)=>{
+  let id = req.params.id;
+  let value = 0;
+
+  mysqlConnection2.query(`UPDATE License SET active_status = ${value} where License_ID = ${id};`,(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+})
+
+
+
+
+
+app.post('/api/add',(req,res)=>{
+  let name = req.body.Product_Name;
+  let type = req.body.Software_Type;
+  let subtype = req.body.Subtype;
+  let category = req.body.Software_Category;
+  let pname = req.body.Publisher_Name;
+  let mname = req.body.manufacturer_name
+  let version = req.body.Version;
+  let desc = req.body.Description;
+  let date = new Date();
+  
+  mysqlConnection2.query(`INSERT INTO Software (Software_Name, Software_Version, Manufacturer_Name, Publisher_Name, SType_ID, SubType_ID, SCategory_ID, SDescription, Installation_Date, ptype) VALUES ('${name}', '${version}', '${mname}', '${pname}', '${type}', '${subtype}', '${category}', '${desc}', ${mysqlConnection2.escape(date)}, 'software');`, (err,rows)=>{
+    if(err) {
+      throw err
+    }
+    else{
+      res.status(200).send({"message":"Data Received"});
+    }
+  })
+})
+
+app.post('/api/addSuite',(req,res)=>{
+  let name = req.body.suite_name;
+  let version = req.body.version;
+  let category = req.body.Software_category;
+  let mname = req.body.manufacturer_name;
+  let pname = req.body.publisher_name;
+  let type = req.body.Software_Type;
+  let subtype = req.body.Software_subtype;
+  let date = new Date();
+
+  mysqlConnection2.query(`INSERT INTO Software_suite (Software_suite_Name, Software_suite_Version, SCategory_ID, Manufacturer_Name, Publisher_Name, SType_ID, SubType_ID, Installation_Date, ptype) VALUES ('${name}', '${version}', '${category}', '${mname}', '${pname}', '${type}', '${subtype}', ${mysqlConnection2.escape(date)}, 'software_suite');`, (err,rows)=>{
+    if(err) {
+      throw err
+    }
+    else{
+      res.status(200).send({"message":"Data Received"});
+    }
+  })
+})
+
+
+
+
+app.post('/api/addlicen',(req,res)=>{
+  let softid = req.body.software_ID;
+  let lname = req.body.license_name;
+  let lmanufacture = req.body.manufacturer_name;
+  let lkey= req.body.license_key;
+  let lvendor = req.body.vendor_name;
+  let lissue_date = req.body.picker;
+  let lexp = req.body.picker2;
+  let lcost = req.body.purchase_cost;
+  let lpurc = req.body.department;
+  let locid = req.body.allocate_location;
+  let ltypeid = req.body.license_type;
+  mysqlConnection2.query(`INSERT INTO License (License_Name,License_Key, Vendor_Name,
+     Manufacturer_Name, Issue_date, License_Expiry_date,
+    Purchase_Cost,Purchase_For,Software_ID,Loc_ID,Ltype_ID,active_status) values
+     ('${lname}', '${lkey}', '${lvendor}', '${lmanufacture}', '${lissue_date}', '${lexp}',
+     '${lcost}', '${lpurc}', '${softid}','${locid}','${ltypeid}',1);`, (err,rows)=>{
+    if(err) {
+      throw err
+    }
+    else{
+      res.status(200).send({"message":"Data Received"});
+    }
+   
+  })
+
+})
+
+
+app.get('/api/newsoftware/:id', (req,res)=>{
+  let id = req.params.id;
+  mysqlConnection2.query(`select * from newsoftware where software_id=${id};`,(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+});
+
+
+app.listen(port,()=>{
+  console.log(`Server Started at Port number ${port}`);
+});
+
+
+
+
+app.get('/api/reports/', (req,res)=>{
+  let sql = `select s.Software_ID , s.Software_Name as Product_Name, s.ptype, s.installations, l.available_count, l.purchase_cost, l.allocated_license, s.Publisher_Name, l.License_Name, lt.Ltype_Name,
+  st.SType_Name, su.SubType_Name, sc.SCategory_Name 
+  from software s
+  left outer join license l on s.Software_ID = l.Software_ID
+  left outer join ltype lt on l.Ltype_ID = lt.Ltype_ID
+  left outer join stype st on s.Stype_ID = st.Stype_ID
+  left outer join subtype su on s.Subtype_ID = su.Subtype_ID
+  left outer join scategory sc on s.SCategory_ID = sc.SCategory_ID
+  Union all
+  select ss.Software_suite_ID , ss.Software_Suite_Name as Product_Name,  ss.ptype, ss.installations, l.available_count, l.purchase_cost, l.allocated_license, ss.Publisher_Name, l.License_Name, lt.Ltype_Name,
+  st.SType_Name, su.SubType_Name, sc.SCategory_Name 
+  from software_suite ss
+  left outer join license l on ss.Software_Suite_ID = l.Software_Suite_ID
+  left outer join ltype lt on l.Ltype_ID = lt.Ltype_ID
+  left outer join stype st on ss.Stype_ID = st.Stype_ID
+  left outer join subtype su on ss.Subtype_ID = su.Subtype_ID
+  left outer join scategory sc on ss.SCategory_ID = sc.SCategory_ID;`
+  mysqlConnection2.query(sql,(err,rows,fields)=>{
+    if(!err){
+      res.send(rows);
+    }
+    else{
+      console.log(err);
+    }
+  })
+})

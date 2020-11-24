@@ -1,0 +1,34 @@
+<div class="container-fluid text-center" >
+
+    <div class="row"  *ngFor="let item of collection | paginate: { itemsPerPage: 10, currentPage: p }">
+    
+      <div  class="col-xs-12 col-sm-6 col-sm-offset-3">
+    
+        <div  class="new-message-box">
+    
+          <div  class="new-message-box-alert">
+
+              <div  class="info-tab tip-icon-alert" title="error"><i></i></div>
+    
+    
+            <div [ngClass]="{'read': !item.read}" class="tip-box-alert"  > 
+    
+              <p>{{ item.name }} is expiring in {{ item.expiry}} days!
+    
+              <a routerLink="/renewlicense" class="btn btn-sm" href="555" > >></a></p>
+
+             
+            </div>
+    
+          </div>
+    
+        </div>
+    
+      </div>
+    
+    </div>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+    
+</div>
+  

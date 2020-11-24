@@ -1,0 +1,377 @@
+@import "src/theme.scss";
+
+// a {
+
+// border-radius: 7px;
+
+// display:block;
+
+// font-size: 1.2rem;
+
+// color: white;
+
+// padding: 16px;
+
+// text-decoration: none;
+
+// }
+// .example-icon {
+//     padding: 0 14px;
+//   }
+  
+//   .example-spacer {
+//     flex: 1 1 auto;
+//   }
+
+
+
+::ng-deep.mat-menu-panel {
+    max-width: none !important;
+  }
+
+
+
+.name
+{
+    
+    flex:1 1 auto; // ie: row wrap
+     
+}
+a:hover{
+
+background-color: none;
+
+cursor: pointer;
+
+text-decoration: underline;
+
+
+}
+
+.activeclass{
+
+text-decoration: underline;
+
+// background-color: #9b79e0;
+
+// color: #99d3ff;
+
+// font-weight: bold;
+
+}
+
+.updateForm, .renewForm, .installations, .users, .list_license, .allocate{
+
+margin: 10px;
+
+text-align: center;
+
+//max-width: 100%;
+
+}
+
+select{
+
+border: 1px solid #dce0d4;
+
+border-radius: 5px;
+
+// margin: 5px;
+
+padding: 5px;
+
+width: max-content;
+
+}
+
+.select{
+
+border: 1px solid #dce0d4;
+
+border-radius: 5px;
+
+// margin: 5px;
+
+padding: 5px;
+
+width: 180px;
+
+}
+
+label{
+
+font-size: 16px;
+
+color: black;
+
+padding-left: 10px;
+
+}
+
+// input[type='text']{
+
+// width: 180px;
+
+// border: 1px solid #dce0d4;
+
+// border-radius: 5px;
+
+// padding: 8px;
+
+// }
+
+input[type='search']{
+
+width: 180px;
+
+border: 1px solid #dce0d4;
+
+border-radius: 5px;
+
+padding: 8px;
+
+
+
+}
+
+::ng-deep .mat-form-field-underline {
+
+display: none;
+
+}
+
+.my-select-panel-class{
+
+width: 180px;
+
+}
+
+input[type='number']{
+
+width: 196px;
+
+border: 1px solid #dce0d4;
+
+border-radius: 5px;
+
+// padding: 5px;
+
+height: 30px;
+
+}
+
+input[type='button']{
+
+background-color: mat-color($reddish-app-accent);
+
+color: white;
+
+font-size: 16px; 
+
+border: 0px solid #dce0d4;
+
+border-radius: 5px;
+
+margin: 5px;
+
+padding: 5px;
+
+padding-left: 15px;
+
+padding-right: 15px;
+
+cursor: pointer;
+
+align-content: center;
+
+}
+
+input[type='button']:hover{
+
+background-color: rgb(55, 102, 133);
+
+}
+
+.stylepopupbuttonconfirm{
+
+background-color: mat-color($reddish-app-primary);
+
+color: white;
+
+font-size: 16px; 
+
+}
+
+.stylepopupbuttoncancel{
+
+margin-left: 10px;
+
+background-color: rgb(179, 41, 37);
+
+color: white;
+
+font-size: 16px;
+
+}
+
+.logo{
+
+color: #eaece6;
+
+font-size: 18px;
+
+margin-left: 15px;
+
+padding-top: 4px;
+
+}
+
+.logo .apptype{
+
+font-size: 18px;
+
+color: #eaece6;
+
+}
+
+.apptype{
+
+padding:5px;
+
+}
+
+.links{
+
+margin-left: 150px;
+
+}
+
+td {
+
+width: 200px;
+
+// padding: 5px;
+
+text-align: left;
+
+// margin: 5px;
+
+}
+
+table tr {
+
+margin: 10px;
+
+}
+
+mat-toolbar
+{
+
+width: 100%; }
+
+.r1{
+
+margin-left: 250px;
+
+}
+
+mat-icon
+{
+
+display: flex;
+
+justify-content:flex-end;
+
+color: white;
+
+padding: 1px;
+
+display: inline-block;
+
+margin-right: 1.5em;
+
+cursor: pointer;
+
+}
+
+span{
+
+color: white;
+
+font-size: 18px;
+
+padding: 15px;
+
+}
+
+span:hover{
+
+text-decoration: underline;
+
+color:white;
+
+}
+
+
+
+.activeclass
+{
+
+color: #e9fb56;
+
+}
+
+a{
+text-decoration: none;
+
+color:white;
+
+}
+
+// matBadge, .mat-badge-content {
+
+// width: auto;
+
+// display: grid;
+
+// min-width: 4px;
+
+// min-height: 4px;
+
+// text-align: center;
+
+// align-items: center;
+
+// padding: 1px 2px;
+
+// top: -150px;
+
+// right: -45px;
+
+// }
+// @media(max-width:1000px)
+// {
+//     .logo{
+//         padding:10px 10px ; 
+//     }
+//     .links{
+//         padding:10px 10px ;
+//     }
+//     .icon
+//     {
+//         padding:10px 10px ;
+//     }
+// }
+// @media(max-width:700px)
+// {
+//     .logo{
+//         flex-direction: column;
+//     }
+//     .links
+//     {
+//         flex-direction: column;
+//     }
+//     .icon{
+//         flex-direction: column;
+//     }
+// }

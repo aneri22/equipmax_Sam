@@ -1,0 +1,150 @@
+<div fxLayout="column" class="container" fxFlex="95%">
+    <div class="filt" fxFlex="100%">
+      <button fxFlexAlign="end" mat-raised-button (click)="openDialog()">Filter Reports</button>
+    </div>
+    <div class="wrapper">
+      <div class="charts" fxLayout="column">
+        <div *ngIf="showDefault" fxLayout="row">
+          <div fxFlex="47.2%" class="chart chart1">
+            <h3>Installed Applications by status </h3>
+            <mat-spinner></mat-spinner>
+            <google-chart  #chart [title]="title" [type]="type" [data]="data" [columnNames]="columnNames"
+              [options]="options" [width]="width" [height]="height">
+            </google-chart>
+          </div>
+  
+          <div fxFlex="47.2%" class="chart chart2">
+            <h3>Licensed products at risk by cost</h3>
+            <mat-spinner></mat-spinner>
+            <google-chart #chart [title]="title2" [type]="type2" [data]="data2" [columnNames]="columnNames2"
+              [options]="options2" [width]="width2" [height]="height2">
+            </google-chart>
+          </div>
+        </div>
+  
+        <div *ngIf="showDefault" fxLayout="row">
+          <div class="chart chart3" fxFlex="47.2%">
+            <h3>Licensed products at risk by entitlements</h3>
+            <mat-spinner></mat-spinner>
+            <google-chart #chart [title]="title3" [type]="type3" [data]="data3" [columnNames]="columnNames3"
+              [options]="options3" [width]="width3" [height]="height3">
+            </google-chart>
+          </div>
+          <div class="chart chartp" fxFlex="47.2%">
+            <h3>Percentages</h3>
+            <div class="percentages">
+              <div class="overconsumed no">
+                <strong class="info">Total  Consumed Licenses</strong><br>
+                <button style="background-color: #c2deff" mat-raised-button>{{noofOverConsumedLicense}} </button>
+                
+              </div>
+              <div class="overconsumed per">
+                <strong class="info">Percentage of  Consumed Licenses</strong><br>
+                <button style="background-color: #c2deff" mat-raised-button>{{percentagOfOverConsumedLicense}}%</button>
+              </div>
+              <div class="underconsumed no">
+                <strong class="info">Total Available Licenses</strong><br>
+                <button style="background-color: #dab8ff" mat-raised-button>{{noOfUnderConsumedLicense}}</button>
+                
+              </div>
+              <div class="underconsumed per">
+                <strong class="info">Percentage of Available Licenses</strong><br>
+                
+                <button style="background-color: #dab8ff" mat-raised-button>{{percentageOfUnderConsumedLicense}}%</button>
+              </div>
+              <!-- <div class="unauthorized">
+  
+                <strong class="info">Installations of unauthorized applications</strong><br>
+                <button style="background-color: #fcac9a" mat-raised-button>47%</button>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <div *ngIf="showDefault" fxLayout="row">
+          <div class="chart chart4" fxFlex="47.2%">
+            <h3>Products with most unlicensed Installations</h3>
+            <mat-spinner></mat-spinner>
+            <google-chart #chart [title]="title4" [type]="type4" [data]="data4" [columnNames]="columnNames4"
+              [options]="options4" [width]="width4" [height]="height4">
+            </google-chart>
+          </div>
+          <div class="chart chart5" fxFlex="47.2%">
+            <h3>Number of Unauthorized Applications</h3>
+            <mat-spinner></mat-spinner>
+            <google-chart #chart [title]="title5" [type]="type5" [data]="data5" [columnNames]="columnNames5"
+              [options]="options5" [width]="width5" [height]="height5">
+            </google-chart>
+          </div>
+        </div>
+        <div *ngIf="showFiltered" fxLayout="row">
+          <div fxFlex="47.2%" class="chart chart1">
+            <h3>Installed Applications by status</h3>
+            <google-chart #chart [title]="title6" [type]="type6" [data]="data6" [columnNames]="columnNames6"
+              [options]="options6" [width]="width6" [height]="height6">
+            </google-chart>
+          </div>
+          <div fxFlex="47.2%" class="chart chart2">
+            <h3>Licensed products at risk by cost</h3>
+            <p *ngIf="shownoData"> Therer are no Licensed Products at risk for selected filter</p>
+            <google-chart *ngIf="!shownoData" #chart [title]="title7" [type]="type7" [data]="data7" [columnNames]="columnNames7"
+              [options]="options7" [width]="width7" [height]="height7">
+            </google-chart>
+          </div>
+  
+        </div>
+        <div *ngIf="showFiltered" fxLayout="row">
+  
+          <div class="chart chart3" fxFlex="47.2%">
+            <h3>Licensed products at risk by entitlements</h3>
+            <p *ngIf="shownoRiskEntitlement"> Therer are no Licensed Products at risk by entitlement for selected filter</p>
+            <google-chart *ngIf="!shownoRiskEntitlement" #chart [title]="title8" [type]="type8" [data]="data8" [columnNames]="columnNames8"
+              [options]="options8" [width]="width8" [height]="height8">
+            </google-chart>
+          </div>
+         <div class="chart chartp" fxFlex="47.2%">
+          <h3>Percentages</h3>
+          <div class="percentages">
+            <div class="overconsumed no">
+              <strong class="info">Total Consumed Licenses</strong><br>
+              <button style="background-color: #c2deff" mat-raised-button>{{noofOverConsumedLicense}} </button>
+              
+            </div>
+            <div class="overconsumed per">
+              <strong class="info">Percentage of  Consumed Licenses</strong><br>
+              <button style="background-color: #c2deff" mat-raised-button>{{percentagOfOverConsumedLicense}}%</button>
+            </div>
+            <div class="underconsumed no">
+              <strong class="info">Total Available Licenses</strong><br>
+              <button style="background-color: #dab8ff" mat-raised-button>{{noOfUnderConsumedLicense}}</button>
+              
+            </div>
+            <div class="underconsumed per">
+              <strong class="info">Percentage of Available Consumed Licenses</strong><br>
+              
+              <button style="background-color: #dab8ff" mat-raised-button>{{percentageOfUnderConsumedLicense}}%</button>
+            </div>
+            <!-- <div class="unauthorized">
+  
+              <strong class="info">Installations of unauthorized applications</strong><br>
+              <button style="background-color: #fcac9a" mat-raised-button>47%</button>
+            </div> -->
+          </div>
+         
+          </div>
+        </div>
+        <div *ngIf="showFiltered" fxLayout="row">
+          <div class="chart chart4" fxFlex="47.2%">
+            <h3>Products with most unlicensed Installations</h3>
+            <google-chart #chart [title]="title9" [type]="type9" [data]="data9" [columnNames]="columnNames9"
+              [options]="options9" [width]="width9" [height]="height9">
+            </google-chart>
+          </div>
+          <div class="chart chart5" fxFlex="47.2%">
+           <h3>Number of Unlicensed Installations</h3>
+            <google-chart #chart [title]="title10" [type]="type10" [data]="data10" [columnNames]="columnNames10"
+              [options]="options10" [width]="width10" [height]="height10">
+            </google-chart>
+          </div>
+        </div>
+      </div>
+    </div>

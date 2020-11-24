@@ -1,0 +1,631 @@
+<div>
+  <h3 style="display: block; color: #5680e9;  margin:20px; margin-left: 50px;">{{sname}}</h3>
+</div>
+<div class="tabs">
+  <mat-tab-group>
+    <mat-tab label="Software Info">
+      <br>
+      <div class="info">
+        <table>
+          <tr>
+            <td>
+              <label>Software Name:</label>
+            </td>
+            <td>
+              <label>{{sname}}</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Publisher Name:</label>
+            </td>
+            <td>
+              <label>{{pname}}</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Software Type</label>
+            </td>
+            <td>
+              <label>{{stype}}</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Subtype:</label>
+            </td>
+            <td>
+              <label>{{ssubtype}}</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Software Category:</label>
+            </td>
+            <td>
+              <label>{{scategory}}</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Upgrade Software:</label>
+            </td>
+            <td>
+              <button color="warn" (click)="goToUpgrade()" mat-raised-button>
+                Upgrade
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Licenses">
+      <div class="addlicensebtn">
+        <button color="primary"  (click)="goToAdd()" mat-raised-button>Add
+          License</button>
+      </div>
+      <div class="notassinged" *ngIf="nolicenses">
+   
+        <div class="notfoundbox">
+          <h5>License List is Empty</h5>
+          <small>No licenses assigned to softwares yet.</small><br>
+          <small>Add liense to software by clicking on Add license button.</small>
+      </div>
+    </div>
+      <div *ngIf="!nolicenses" class="list_license mat-elevation-z8">
+        <table mat-table [dataSource]="licenselist">
+          <ng-container matColumnDef="licen_type">
+            <th class="col-bg-button" style="text-align: center;" mat-header-cell *matHeaderCellDef> License Type</th>
+            <td mat-cell *matCellDef="let element">{{element.Ltype_Name}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="licen_name">
+            <th class="col-bg-button" style="text-align: center;" mat-header-cell *matHeaderCellDef> License Name</th>
+            <td mat-cell *matCellDef="let element">{{element.License_Name}} </td>
+          </ng-container>
+
+
+          <ng-container matColumnDef="licen_key">
+            <th class="col-bg-button" style="text-align: center;" mat-header-cell *matHeaderCellDef> License Key</th>
+            <td mat-cell *matCellDef="let element">{{element.License_Key}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th class="col-bg-button" style="text-align: center;" mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let element">
+              <button style="color: white;" [class.disable_class]="( today != element.expiry_date )"
+                [disabled]="( today != element.expiry_date )" (click)="goToRenew(element.License_ID)"
+                class="col-bg-button" mat-button>Renew</button>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="remove">
+            <th class="col-bg-button" style="text-align: center;" mat-header-cell *matHeaderCellDef> Remove </th>
+            <td mat-cell *matCellDef="let element">
+              <button class="stylepopupbuttoncancel" mat-raised-button (click)="openDialog(element)"
+                mat-button>Delete</button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef=" licenseTable"></tr>
+          <tr mat-row *matRowDef="let row; columns: licenseTable"></tr>
+        </table>
+        <mat-paginator #MatPaginator_license [pageSizeOptions]="[5,10,20]" showFirstLastButtons>
+        </mat-paginator>
+      </div>
+
+
+    </mat-tab>
+
+
+    <mat-tab label="Allocation"><br>
+
+      <div class="alloclicense">
+
+          <p class="notassinged" *ngIf="showNoData">Software is not assigned to user yet.</p>
+
+        <div class="usertable">
+
+          
+
+          <div *ngIf="!shownoUser">
+            <div class="users mat-elevation-z8">
+              <table *ngIf="!shownoUser" mat-table [dataSource]="Userlist">
+                <ng-container matColumnDef="User_Name">
+
+                  <th class="col-bg-button" mat-header-cell *matHeaderCellDef> Username</th>
+
+                  <td mat-cell *matCellDef="let element">{{element.user_name}} </td>
+
+                </ng-container>
+
+
+                <ng-container matColumnDef="Email_ID">
+
+                  <th class="col-bg-button" mat-header-cell *matHeaderCellDef>Email Id</th>
+
+                  <td mat-cell *matCellDef="let element"> {{element.email_id}}</td>
+
+                </ng-container>
+
+                <ng-container matColumnDef="Phone_number">
+
+                  <th class="col-bg-button" mat-header-cell *matHeaderCellDef>Phone</th>
+
+                  <td mat-cell *matCellDef="let element">{{element.phone_number}}</td>
+
+                </ng-container>
+
+                <ng-container matColumnDef="License_Name">
+
+                  <th class="col-bg-button" mat-header-cell *matHeaderCellDef>License Name</th>
+
+                  <td mat-cell *matCellDef="let element">{{element.license_name}}</td>
+
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="userTable"></tr>
+
+                <tr mat-row *matRowDef="let row; columns: userTable;"></tr>
+
+              </table>
+              <mat-paginator *ngIf="!shownoUser" #MatPaginator_user [pageSizeOptions]="[5,10,20]" showFirstLastButtons>
+              </mat-paginator>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div  class="allocateform">
+
+          <form [formGroup]="allocateForm">
+            <table>
+              <tr>
+                <td> <label>Software Name:</label></td>
+                <td><label>{{sname}}</label></td>
+              </tr>
+              <tr>
+                <td>
+                  <label> Select User:</label></td>
+                <td>
+                  <mat-form-field class="example-full-width">
+                    <input type="text" matInput formControlName="user" [matAutocomplete]="auto">
+                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" [displayWith]="displayFn">
+                      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                        {{option.User_Name}}
+                      </mat-option>
+                    </mat-autocomplete>
+                  </mat-form-field>
+                <td>
+                  <p class="error" *ngIf="allocateForm.get('user').invalid && allocateForm.get('user').touched">
+                    * User
+                    is required.</p>
+                </td>
+              </tr>
+
+              <tr>
+
+                <td><label>Select License:</label></td>
+                <td>
+                  <select formControlName="license" class="selectLicense" name="license">
+                    <option *ngFor="let type of lilist" [value]="type.License_ID">
+                      {{type.License_Name}}
+                    </option>
+                  </select>
+                </td>
+                <td>
+                  <p class="error" *ngIf="allocateForm.get('license').invalid && allocateForm.get('license').touched">
+                    * license
+                    is required.</p>
+                </td>
+              </tr>
+            </table>
+            <br><br>
+            <button class="allocatebtn" mat-raised-button color="primary" (click)="AllocateLicense()"> Allocate
+            </button>
+          </form>
+        </div>
+      </div>
+
+
+    </mat-tab>
+
+
+    <mat-tab label="Installations">
+
+
+      <div class="notassinged" *ngIf="showNoData">
+      <p>Software not installed yet.</p>
+      </div>
+
+  
+
+      
+
+      <div *ngIf="!showNoData" class="installations" id="content" #content>
+          <div *ngIf="!showNoData" class="exportbtn">
+              <button color="primary"  [matMenuTriggerFor]="menu" mat-raised-button>Export</button>
+              <mat-menu #menu="matMenu">
+                  <button mat-menu-item (click) = "SavePDF(sname)"> PDF</button>
+                  <button mat-menu-item (click) = "exporter.exportTable('csv', { fileName: sname+'installations'})">CSV</button>
+               </mat-menu>
+          </div>
+          
+        <div class="inst_count">
+            
+          <div class="instable mat-elevation-z8">
+           
+            <table mat-table matTableExporter [dataSource]="installationlist" #exporter="matTableExporter">
+              <ng-container matColumnDef="Work_Name">
+                <th class="col-bg-button" mat-header-cell *matHeaderCellDef> Workstation</th>
+                <td mat-cell *matCellDef="let element">{{element.work_name}} </td>
+              </ng-container>
+              <ng-container matColumnDef="User_Name">
+                <th class="col-bg-button" mat-header-cell *matHeaderCellDef> User </th>
+                <td mat-cell *matCellDef="let element">{{element.user_name}}</td>
+              </ng-container>
+              <ng-container matColumnDef="License_Key">
+
+                <th class="col-bg-button" mat-header-cell *matHeaderCellDef> License Key </th>
+
+                <td mat-cell *matCellDef="let element">{{element.license_key}}
+
+                </td>
+
+              </ng-container>
+
+
+
+              <ng-container matColumnDef="Ltype_Name">
+
+                <th class="col-bg-button" mat-header-cell *matHeaderCellDef>License Type</th>
+
+                <td mat-cell *matCellDef="let element"> {{element.ltype_name}}</td>
+
+              </ng-container>
+
+
+              <ng-container matColumnDef="License_Name">
+
+                <th class="col-bg-button" mat-header-cell *matHeaderCellDef>Allocate License</th>
+
+                <td mat-cell *matCellDef="let element">{{element.license_name}}</td>
+
+              </ng-container>
+
+              <tr class="col-bg-button" mat-header-row *matHeaderRowDef="installationTable"></tr>
+
+              <tr mat-row *matRowDef="let row; columns: installationTable;"></tr>
+
+
+
+            </table>
+
+            <mat-paginator #MatPaginator_install [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+
+          </div>
+
+          <div class="displayv">
+
+            <div class="inst_heads">
+
+              <h4>Licensed</h4>
+
+              <button mat-raised-button style="background-color:#4c91ff;
+  
+  color: white;">
+
+                {{ liceninstal }}
+
+              </button>
+
+            </div>
+
+            <div class="inst_heads">
+
+              <h4>Unlicensed</h4>
+
+              <button mat-raised-button style="background-color:#4c91ff;
+  
+  color: white;">
+
+                {{ unliceninstal }}
+
+              </button>
+
+            </div>
+
+            <div class="inst_heads">
+
+              <h4>Total</h4>
+
+              <button mat-raised-button style="background-color:#4c91ff;
+  
+  color: white;">
+
+                {{totallicen}}
+
+              </button>
+
+            </div>
+
+          </div>
+          <!-- <div class="exportbtn">
+            <button id='expbtn' mat-flat-button color="primary"
+              (click)="exporter.exportTable('csv', { fileName: sname+'installations'})">Export as CSV</button>
+            <button id='expbtn' mat-flat-button color="primary" (click)="SavePDF(sname)">Export as PDF</button>
+          </div> -->
+
+        </div>
+
+
+
+      </div>
+
+    </mat-tab>
+
+
+    <mat-tab label="Workstation">
+
+      
+      <div class="wkstntab">
+
+          <div class="notassinged" *ngIf="showNoData">
+              <p>Software not installed on Workstations .</p>
+          </div>
+
+        <div *ngIf="!showNoData" class="workstation">
+
+            <div *ngIf="!showNoData" class="exportbtn">
+                <button color="primary"  [matMenuTriggerFor]="menu" mat-raised-button>Export</button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click) = "SavePDF2(sname)"> PDF</button>
+                    <button mat-menu-item (click)="exporter2.exportTable('csv', { fileName: sname+'workstation'})">CSV</button>
+                 </mat-menu>
+            </div>
+
+          <!-- <label style="text-align: left; "><span style="color:black ">{{sname}}</span></label><br><br> -->
+          <div class="mat-elevation-z8">
+
+            <table mat-table matTableExporter [dataSource]="wslist" #exporter2="matTableExporter">
+
+              <ng-container matColumnDef="Work_Name">
+
+                <th class="col-bg-button" mat-header-cell *matHeaderCellDef> Workstation</th>
+
+                <td mat-cell *matCellDef="let element">{{element.work_name}} </td>
+
+              </ng-container>
+
+
+
+              <ng-container matColumnDef="Server_Name">
+
+                <th class="col-bg-button" mat-header-cell *matHeaderCellDef> Server </th>
+
+                <td mat-cell *matCellDef="let element">{{element.server_name}}</td>
+
+              </ng-container>
+
+
+
+              <ng-container matColumnDef="User_Name">
+
+                <th class="col-bg-button" mat-header-cell *matHeaderCellDef>User</th>
+
+                <td mat-cell *matCellDef="let element">{{element.user_name}}</td>
+
+              </ng-container>
+
+
+
+              <ng-container matColumnDef="no_of_instal">
+
+                <th class="col-bg-button" mat-header-cell *matHeaderCellDef> No of Installations </th>
+
+                <td mat-cell *matCellDef="let element">{{element.no_of_instal}}
+
+                </td>
+
+              </ng-container>
+
+
+
+              <ng-container matColumnDef="licen_no_instal">
+
+                <th class="col-bg-button" mat-header-cell *matHeaderCellDef>No of Licensed Installations</th>
+
+                <td mat-cell *matCellDef="let element"> {{element.licen_no_instal}}</td>
+
+              </ng-container>
+
+
+
+
+
+
+
+              <ng-container matColumnDef="unlicen_no_instal">
+
+                <th class="col-bg-button" mat-header-cell *matHeaderCellDef>No of Unlicensed Installations</th>
+
+                <td mat-cell *matCellDef="let element"> {{element.unlicen_no_instal}}</td>
+
+              </ng-container>
+
+
+
+              <tr mat-header-row *matHeaderRowDef="workstationTable"></tr>
+
+              <tr mat-row *matRowDef="let row; columns: workstationTable;"></tr>
+
+            </table>
+
+
+            <mat-paginator #MatPaginator_ws [pageSizeOptions]="[5,10,20]" showFirstLastButtons>
+
+            </mat-paginator>
+          </div>
+          <!-- <div class="exportbtn">
+            <button id='expbtn' mat-flat-button color="primary"
+              (click)="exporter2.exportTable('csv', { fileName: sname+'workstation'})">Export as CSV</button>
+            <button id='expbtn' mat-flat-button color="primary" (click)="SavePDF2(sname)">Export as PDF</button>
+          </div> -->
+        </div>
+
+      </div>
+
+    </mat-tab>
+
+    <mat-tab label="History">
+
+      <!-- <div class="historytabs">
+            <button class="tablinks" [class.active]="showSoftwareHistory" (click)="openHistory('Software')">Software</button>
+            <button class="tablinks" [class.active]="showLicenseHistory"  (click)="openHistory('Licenses')">Licenses</button>
+          </div> -->
+      <mat-tab-group class="innertabs" *ngIf="!showNoData" mat-align-tabs="center" animationDuration="0ms" >
+        <mat-tab label="Software" class="mat-tab-header" >
+
+          <div class="softhist_table">
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="softwarehistorylist">
+
+                <ng-container matColumnDef="Uninstallation date">
+
+                  <th class="col-bg-button" mat-header-cell *matHeaderCellDef>Uninstallation Date</th>
+
+                  <td mat-cell *matCellDef="let element"> {{element.Upgrade_date  | date: 'yyyy-MM-dd'}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="Software Name">
+                  <th class="col-bg-button" mat-header-cell *matHeaderCellDef>Software Name</th>
+                  <td mat-cell *matCellDef="let element">{{element.oldsoftware_name}}</td>
+                </ng-container>
+                <ng-container matColumnDef="Software Version">
+                  <th class="col-bg-button" mat-header-cell *matHeaderCellDef>Software Version</th>
+                  <td mat-cell *matCellDef="let element"> {{element.oldsoftware_version}}</td>
+                </ng-container>
+                <ng-container matColumnDef="Installation Date">
+                  <th class="col-bg-button" mat-header-cell *matHeaderCellDef>Installation Date</th>
+                  <td mat-cell *matCellDef="let element">{{element.Installation_date |  date: 'yyyy-MM-dd'}}</td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="SoftwareHistoryTable"></tr>
+                <tr mat-row *matRowDef="let row; columns: SoftwareHistoryTable;"></tr>
+              </table>
+              <mat-paginator #MatPaginator_softhist [pageSizeOptions]="[5,10,20]" showFirstLastButtons>
+              </mat-paginator>
+
+            </div>
+          </div>
+
+        </mat-tab>
+        <mat-tab label="License " class="mat-tab-header" >
+
+          <div class="histtab">
+
+            <div class="hist_table">
+
+              <div class="mat-elevation-z8">
+
+                <table mat-table [dataSource]="list">
+
+                  <ng-container matColumnDef="Discovered">
+
+                    <th class="col-bg-button" mat-header-cell *matHeaderCellDef>Discovered Date</th>
+
+                    <td mat-cell *matCellDef="let element"> {{element.Discovered  | date: 'yyyy-MM-dd'}}</td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="Work_Name">
+
+                    <th class="col-bg-button" mat-header-cell *matHeaderCellDef>Workstation</th>
+
+                    <td mat-cell *matCellDef="let element">{{element.Work_Name}}</td>
+
+                  </ng-container>
+
+
+
+                  <ng-container matColumnDef="User_Name">
+
+                    <th class="col-bg-button" mat-header-cell *matHeaderCellDef>User</th>
+
+                    <td mat-cell *matCellDef="let element"> {{element.User_Name}}</td>
+
+                  </ng-container>
+
+                  <ng-container matColumnDef="status">
+
+                    <th class="col-bg-button" mat-header-cell *matHeaderCellDef>Installation Status</th>
+
+                    <td mat-cell *matCellDef="let element">{{element.install_status}}</td>
+
+                  </ng-container>
+
+
+
+                  <tr mat-header-row *matHeaderRowDef="HistoryTable"></tr>
+
+                  <tr mat-row *matRowDef="let row; columns: HistoryTable;"></tr>
+
+                </table>
+
+                <mat-paginator #MatPaginator_hist [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+              </div>
+
+            </div>
+            <div class="hist_filter" style="margin-left: 50px;  margin-top: 50px;">
+              <form>
+                <table>
+                  <tr>
+                    <td>
+                      <label> Software Name:</label> </td>
+                    <td><span class="col -for-soft-name" style="color:black ">{{sname}}</span>
+                    </td>
+                  </tr><br>
+                  <tr>
+                    <td>
+                      <label>Software Filter by :</label>
+                    </td>
+                    <td>
+                      <mat-checkbox [checked]="installed" (change)="installed = !installed" (change)="callHistory()">
+                        Installed </mat-checkbox>&nbsp;&nbsp;
+                      <mat-checkbox [checked]="uninstalled" (change)="uninstalled = !uninstalled"
+                        (change)="callHistory()">Uninstalled</mat-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label>
+                        Filter By Date:
+                      </label></td>
+                    <td>
+                      <select [(value)]="selected" class="select" name="filter"
+                        (change)="filterByDate($event.target.value)">
+                        <option value="week">This Week</option>
+                        <option value='month'>This Month</option>
+                        <option value="year">This Year</option>
+                        <option value="all" selected data-default>Since Beginning</option>
+                      </select>
+                    </td>
+                  </tr><br>
+                  <br>
+                </table>
+              </form>
+
+            </div>
+
+          </div>
+        </mat-tab>
+
+      </mat-tab-group>
+
+    </mat-tab>
+
+
+
+  </mat-tab-group>
+
+</div>

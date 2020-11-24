@@ -1,0 +1,159 @@
+<div class="filterdiv">
+
+        <h2 mat-dialog-title>Filter Reports
+
+        </h2>
+
+        <mat-dialog-content>
+
+                <div class="sidenav">
+                        <mat-list>
+                                <mat-list-item [class.active]="publisher" (click)="showPublisher()">
+                                        <a>Publisher</a>
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                                <mat-list-item [class.active]="type" (click)="showType()">
+                                        <a>Software Type</a>
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                                <mat-list-item [class.active]="subtype" (click)="showSubType()">
+                                        <a>Software SubType</a>
+                                </mat-list-item>
+                                <mat-divider></mat-divider>
+                                <mat-list-item [class.active]="category" (click)="showCategory()">
+                                        <a>Software Category</a>
+                                </mat-list-item>
+                               <mat-divider></mat-divider>
+                                <mat-list-item [class.active]="license" (click)="showLicense()">
+                                        <a>Licenses</a>
+                                </mat-list-item>
+                        </mat-list>
+                </div>
+
+                <div class="main">
+
+
+
+                        <div *ngIf="publisher" class="publisher">
+
+                                <mat-checkbox *ngFor="let item of publisherNames " value="item.Publisher_Name"
+                                        (change)="filterChart($event, item.Publisher_Name)" [checked] = "toggleCheckBox(item.Publisher_Name)">{{item.Publisher_Name}} 
+                                </mat-checkbox>
+                                <!-- <mat-checkbox value="Apache" (change)="filterChart($event, 'Apache')">Apache</mat-checkbox><br>
+
+<mat-checkbox value="Google" (change)="filterChart($event, 'Google')">Google</mat-checkbox><br>
+
+<mat-checkbox value="Oracle" (change)="filterChart($event, 'Oracle')">Oracle</mat-checkbox><br>
+
+<mat-checkbox value="Adobe" (change)="filterChart($event, 'Adobe')">Adobe</mat-checkbox> -->
+
+
+
+                        </div>
+
+
+
+                        <div *ngIf="type" class="type">
+
+                                <mat-checkbox *ngFor="let item of softwareTypes" value="item.SType_ID"
+                                        (change)="filterChart($event, item.SType_Name)" [checked] = "toggleCheckBox(item.SType_Name)" >{{item.SType_Name}}
+                                </mat-checkbox>
+
+
+                                <!-- <mat-checkbox value="Application" (change)="filterChart($event, 'Application')">Application</mat-checkbox><br>
+
+<mat-checkbox value="Media" (change)="filterChart($event, 'Media')">Media</mat-checkbox><br>
+
+<mat-checkbox value="Programming" (change)="filterChart($event, 'Programming')">Programming</mat-checkbox> -->
+
+
+                        </div>
+
+
+                        <div *ngIf="subtype" class="subtype">
+
+
+                                <mat-checkbox *ngFor="let item of subTypes" value="item.SubType_ID"
+                                        (change)="filterChart($event,item.SubType_Name)" [checked] = "toggleCheckBox(item.SubType_Name)">{{item.SubType_Name}}
+                                </mat-checkbox>
+
+                                <!-- 
+<mat-checkbox value="Freeware" (change)="filterChart($event, 'Freeware')">Freeware</mat-checkbox><br>
+
+<mat-checkbox value="Shareware" (change)="filterChart($event, 'Shareware')">Shareware</mat-checkbox><br>
+
+<mat-checkbox value="Utility" (change)="filterChart($event, 'Utility')">Utility</mat-checkbox><br>
+
+<mat-checkbox value="Browser" (change)="filterChart($event, 'Browser')">Browser</mat-checkbox> -->
+
+                        </div>
+
+
+
+                        <div *ngIf="category" class="category">
+                                <mat-checkbox *ngFor="let item of softwareCategories" value="item.SCategory_ID"
+                                        (change)="filterChart($event, item.SCategory_Name)" [checked] = "toggleCheckBox(item.SCategory_Name)">{{item.SCategory_Name}}
+                                </mat-checkbox>
+
+                                <!-- 
+<mat-checkbox value="Freeware" (change)="filterChart($event, 'Freeware')">Freeware</mat-checkbox><br>
+
+<mat-checkbox value="Shareware" (change)="filterChart($event, 'Shareware')">Shareware</mat-checkbox><br>
+
+<mat-checkbox value="Utility" (change)="filterChart($event, 'Utility')">Utility</mat-checkbox><br>
+
+<mat-checkbox value="Browser" (change)="filterChart($event, 'Browser')">Browser</mat-checkbox> -->
+
+
+
+
+                        </div>
+
+
+
+                        <div *ngIf="license" class="license">
+
+                                <mat-checkbox *ngFor="let item of licenseTypes" value="item.Ltype_ID"
+                                        (change)="filterChart($event, item.Ltype_Name)" [checked] = "toggleCheckBox(item.Ltype_Name)">{{item.Ltype_Name}}
+                                </mat-checkbox>
+
+
+
+                                <!-- <mat-checkbox value="GNU" (change)="filterChart($event, 'GNU')">GNU General Public License</mat-checkbox><br>
+
+<mat-checkbox value="MIT" (change)="filterChart($event, 'MIT')">MIT</mat-checkbox><br>
+
+<mat-checkbox value="Mozilla" (change)="filterChart($event, 'Mozilla')">Mozilla Public License 2.0
+
+</mat-checkbox><br> -->
+
+
+                        </div>
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+        </mat-dialog-content>
+
+        <mat-dialog-actions>
+
+                <button mat-raised-button (click)="closeDialog('filter')" color="primary" mat-dialog-close> Apply Filter
+
+                </button>
+
+                <button mat-button (click)="closeDialog('cancel')" mat-dialog-close> Cancel</button>
+
+        </mat-dialog-actions>
+
+
+
+</div>

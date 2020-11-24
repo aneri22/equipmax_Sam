@@ -1,0 +1,447 @@
+@import "src/theme.scss";
+
+@import "src/app/app.component.scss";
+
+
+
+select {
+
+border: 1px solid #dce0d4;
+
+border-radius: 5px;
+
+padding: 5px;
+
+width: 250px;
+
+height: 35px;
+
+margin: 5px;
+
+
+
+
+
+}
+
+mat-card
+
+{
+
+height: 300px;
+
+}
+
+.suiteForm {
+
+
+
+margin: 5px;
+
+
+
+text-align: center;
+
+
+
+box-shadow: 3px 11px 22px 0px rgba(0,0,0,0.53);
+
+
+
+max-width: 100%;
+
+
+
+}
+
+
+
+a {
+
+
+
+font-size: 1.5rem;
+
+
+
+color: white;
+
+
+
+padding-right: 30px;
+
+
+
+}
+
+
+
+a:hover{
+
+
+
+cursor: pointer;
+
+
+
+text-decoration: underline;
+
+
+
+}
+
+
+
+.addForm, .updateForm, .renewForm {
+
+
+
+margin: 10px;
+
+
+
+text-align: center;
+
+
+
+box-shadow: 3px 11px 22px 0px rgba(0,0,0,0.53);
+
+
+
+max-width: 90%;
+
+
+
+}
+
+
+
+select{
+
+
+
+border: 1px solid #dce0d4;
+
+
+
+border-radius: 5px;
+
+
+
+margin: 5px;
+
+
+
+padding: 5px;
+
+
+
+}
+
+
+
+label{
+
+
+
+font-size: 16px;
+
+
+
+color: black;
+
+
+
+padding-left: 10px;
+
+
+
+}
+
+
+
+input[type='text']{
+
+
+
+border: 1px solid #dce0d4;
+
+
+
+border-radius: 5px;
+
+
+
+padding: 8px;
+
+
+
+height: 15px;
+
+
+
+width: 165px;
+
+
+
+}
+
+
+
+input[type='number']{
+
+
+
+border: 1px solid #dce0d4;
+
+
+
+border-radius: 5px;
+
+
+
+padding: 5px;
+
+
+
+width: 180px;
+
+
+
+}
+
+
+
+input[type='button']{
+
+
+
+background-color: mat-color($reddish-app-accent);
+
+
+
+color: white;
+
+
+
+font-size: 16px; 
+
+
+
+border: 0px solid #dce0d4;
+
+
+
+border-radius: 5px;
+
+
+
+margin: 5px;
+
+
+
+padding: 5px;
+
+
+
+padding-left: 15px;
+
+
+
+padding-right: 15px;
+
+
+
+cursor: pointer;
+
+
+
+align-content: center;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+input[type='button']:hover{
+
+
+
+
+
+
+
+background-color: rgb(55, 102, 133);
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+.stylepopupbuttonconfirm{
+
+
+
+
+
+
+
+background-color: mat-color($reddish-app-primary);
+
+
+
+color: white;
+
+
+
+font-size: 16px; 
+
+
+
+}
+
+
+
+
+
+
+
+.stylepopupbuttoncancel{
+
+
+
+margin-left: 10px;
+
+
+
+background-color: rgb(179, 41, 37);
+
+
+
+color: white;
+
+
+
+font-size: 16px;
+
+
+
+}
+
+
+
+
+
+
+
+.logo{
+
+
+
+color: #eaece6;
+
+
+
+font-size: 22px;
+
+
+
+margin-left: 15px;
+
+
+
+padding-top: 10px;
+
+
+
+}
+
+
+
+
+
+
+
+.logo .apptype{
+
+
+
+font-size: 18px;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+td {
+
+
+
+width: 200px;
+
+
+
+padding: 5px;
+
+
+
+text-align: left;
+
+
+
+margin: 5px;
+
+// border: 1px solid black;
+
+}
+
+
+
+
+
+
+
+table tr {
+
+margin: 10px;
+
+}
+
+button
+
+{
+
+float:left;
+
+}
+.error{
+
+    color: red;
+    font-size:11px;
+    
+    }

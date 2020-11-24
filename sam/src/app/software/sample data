@@ -1,0 +1,566 @@
+export interface Element {
+
+workstation: string;
+
+user: string;
+
+licensekey: string;
+
+licensetype: string;
+
+allocatelicense: string;
+
+}
+
+const ELEMENT_DATA: Element[] = [
+
+{
+
+workstation: "HP",
+
+user: "A shah",
+
+licensekey: "121hgs91",
+
+licensetype: "GNU",
+
+allocatelicense: "Adobe Acrobat"
+
+},
+
+{
+
+workstation: "ThinkStation",
+
+user: "Jack",
+
+licensekey: "7GH$HKL9",
+
+licensetype: "EULA",
+
+allocatelicense: "Acrobat 2.0"
+
+},
+
+{
+
+workstation: "Sony",
+
+user: "patel",
+
+licensekey: "178jHGF1",
+
+licensetype: "Apache License 2.0",
+
+allocatelicense: "Acrobat 2.0"
+
+},
+
+{
+
+workstation: "Kronos",
+
+user: "Jitendra",
+
+licensekey: "743#HKK9",
+
+licensetype: "Apache License 2.0",
+
+allocatelicense: "Open Software Licensed"
+
+},
+
+{
+
+workstation: "Xerox Alto",
+
+user: "M Suresh",
+
+licensekey: "1897JHG1",
+
+licensetype: "Apache License 2.0",
+
+allocatelicense: "Acrobat 2.0"
+
+},
+
+{
+
+workstation: "Dell",
+
+user: "H shah",
+
+licensekey: "76hGDF7#",
+
+licensetype: "Apache License 2.0",
+
+allocatelicense: "Acrobat 2.0"
+
+},
+
+
+
+];
+
+export interface Installations {
+
+workstation: string;
+
+user: string;
+
+licensekey: string;
+
+licensetype: string;
+
+allocatelicense: string;
+
+}
+
+const Installations_data: Installations[] = [
+
+{
+
+workstation: "HP",
+
+user: "A shah",
+
+licensekey: "121hgshd1",
+
+licensetype: "GNU",
+
+allocatelicense: "Adobe Acrobat"
+
+},
+
+{
+
+workstation: "ThinkStation",
+
+user: "Jack",
+
+licensekey: "121hgshd1",
+
+licensetype: "EULA",
+
+allocatelicense: "Acrobat 2.0"
+
+},
+
+{
+
+workstation: "Sony",
+
+user: "patel",
+
+licensekey: "121hgshd1",
+
+licensetype: "Apache License 2.0",
+
+allocatelicense: "Acrobat 2.0"
+
+},
+
+{
+
+workstation: "Kronos",
+
+user: "Jitendra",
+
+licensekey: "121hgshd1",
+
+licensetype: "Apache License 2.0",
+
+allocatelicense: "Acrobat 2.0"
+
+},
+
+{
+
+workstation: "Xerox Alto",
+
+user: "M Suresh",
+
+licensekey: "121hgshd1",
+
+licensetype: "Apache License 2.0",
+
+allocatelicense: "Acrobat 2.0"
+
+},
+
+{
+
+workstation: "Dell",
+
+user: "H shah",
+
+licensekey: "121hgshd1",
+
+licensetype: "Apache License 2.0",
+
+allocatelicense: "Acrobat 2.0"
+
+},
+
+{
+
+workstation: "Dell",
+
+user: "H shah",
+
+licensekey: "121hgshd1",
+
+licensetype: "GNU",
+
+allocatelicense: "Acrobat 2.0"
+
+},
+
+{
+
+workstation: "ThinkStation",
+
+user: "Jack",
+
+licensekey: "H78*&HGH",
+
+licensetype: "Site",
+
+allocatelicense: "Acrobat 2.0"
+
+},
+
+{
+
+workstation: "Sony",
+
+user: "patel",
+
+licensekey: "878H6%*0",
+
+licensetype: "Apache License 2.0",
+
+allocatelicense: "Acrobat 2.0"
+
+},
+
+{
+
+workstation: "Kronos",
+
+user: "Jitendra",
+
+licensekey: "7HJG753$",
+
+licensetype: "Perpetual",
+
+allocatelicense: "Acrobat 2.0"
+
+},
+
+{
+
+workstation: "Xerox Alto",
+
+user: "M Suresh",
+
+licensekey: "%768HJ4K",
+
+licensetype: "EULA",
+
+allocatelicense: "Acrobat 2.0"
+
+},
+
+{
+
+workstation: "Dell",
+
+user: "H shah",
+
+licensekey: "564#GJHD",
+
+licensetype: "GNU",
+
+allocatelicense: "Acrobat 2.0"
+
+},
+
+
+
+];
+
+export interface Users {
+
+username: string;
+
+workstation: string;
+
+server: string;
+
+email: string;
+
+phone: number;
+
+}
+
+export interface Workstation {
+
+
+
+workstation: string;
+
+server: string;
+
+no_of_inst: number;
+
+no_of_licen_inst: string;
+
+user: string;
+
+no_of_unlicen_inst: string;
+
+}
+
+const WS_data: Workstation[] = [
+
+{
+
+
+
+workstation: "Dell",
+
+server: "Application",
+
+no_of_inst: 2,
+
+no_of_licen_inst: "1",
+
+user: "Suresh",
+
+no_of_unlicen_inst: "NA",
+
+
+
+},
+
+{
+
+
+
+workstation: "HP",
+
+server: "Application",
+
+no_of_inst: 3,
+
+no_of_licen_inst: "1",
+
+user: "Isha",
+
+no_of_unlicen_inst: "NA"
+
+},
+
+
+
+{
+
+
+
+workstation: "Corsair One Pro i180",
+
+server: "Proxy",
+
+no_of_inst: 3,
+
+no_of_licen_inst: "NA",
+
+user: "Sony",
+
+no_of_unlicen_inst: "2"
+
+},
+
+{
+
+
+
+workstation: "Apple Mac Pro",
+
+server: "Real Time Communication",
+
+no_of_inst: 2,
+
+no_of_licen_inst: "1",
+
+user: "kronos",
+
+no_of_unlicen_inst: "1"
+
+},
+
+{
+
+
+
+workstation: "Mac Mini",
+
+server: "Application",
+
+no_of_inst: 4,
+
+no_of_licen_inst: "3",
+
+user: "Shah",
+
+no_of_unlicen_inst: "1"
+
+},
+
+{
+
+
+
+workstation: "HP Z240 SFF",
+
+server: "Application",
+
+no_of_inst: 2,
+
+no_of_licen_inst: "2",
+
+user: "Shah",
+
+no_of_unlicen_inst: "NA"
+
+},
+
+{
+
+
+
+workstation: "HP Z240 SFF",
+
+server: "Application",
+
+no_of_inst: 2,
+
+no_of_licen_inst: "2",
+
+user: "Shah",
+
+no_of_unlicen_inst: "7"
+
+},
+
+{
+
+
+
+workstation: "HP Z240 SFF",
+
+server: "Application",
+
+no_of_inst: 2,
+
+no_of_licen_inst: "NA",
+
+user: "Shah",
+
+no_of_unlicen_inst: "2"
+
+},
+
+{
+
+
+
+workstation: "HP Z240 SFF",
+
+server: "Application",
+
+no_of_inst: 2,
+
+no_of_licen_inst: "2",
+
+user: "Shah",
+
+no_of_unlicen_inst: "3"
+
+},
+
+];
+export interface License {
+
+
+
+licen_no: string;
+
+licen_type: string;
+
+licen_name: string;
+
+licen_key: string;
+
+
+
+}
+export interface PeriodicElement {
+position: number;
+Product_Name: string;
+License_Name: string;
+License_Type: string;
+Publisher_Name: string;
+Software_Type: string;
+Subtype: string;
+Software_Category: string;
+Compliance_status: string;
+Total_License: number;
+Consumed: number;
+// }
+
+
+
+}
+export interface Instal {
+
+    Work_Name: string;
+    User_Name: string;
+    License_Key: string;
+    Ltype_Name: string;
+    License_Name: string;
+    
+  
+  
+  }
+export interface Alloc {
+    User_Name: string;
+    Work_Name: string;
+    Server_Name: string;
+    Email_ID: string;
+    Phone_number : number;
+ 
+  }
+  export interface Users{
+    User_Name: string;
+    Work_Name: string;
+    Server_Name: string;
+    Email_ID: string;
+    Phone_number : number;
+ 
+  }
+  export interface workstn{
+      Work_Name: string;
+      Server_Name:string;
+      User_Name:string;
+      no_of_instal:number;
+      licen_no_instal:number;
+      unlicen_no_instal:number;
+  }
+  export interface history{
+    Discovered: Date;
+    Work_Name:string;
+    User_Name:string;
+    status:string;
+}

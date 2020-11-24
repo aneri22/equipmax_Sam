@@ -1,0 +1,161 @@
+@import "src/theme.scss";
+
+
+::ng-deep.mat-menu-panel {
+    max-width: none !important;
+    
+   
+  }
+
+
+
+
+.name
+{
+    flex:1 1 auto; 
+    width: 100%;// ie: row wrap
+}
+a:hover{
+background-color: none;
+cursor: pointer;
+text-decoration: underline;
+}
+
+.activeclass{
+text-decoration: underline;
+}
+
+.logo{
+
+color: #eaece6;
+
+font-size: 18px;
+
+margin-left: 15px;
+
+padding-top: 4px;
+
+}
+
+.logo .apptype{
+
+font-size: 18px;
+
+color: #eaece6;
+
+}
+
+.apptype{
+
+padding:5px;
+
+}
+
+.links{
+
+margin-left: 150px;
+
+}
+
+
+
+mat-toolbar{
+width: 100%;
+}
+
+.r1{
+
+margin-left: 250px;
+
+}
+
+mat-icon{
+display: flex;
+justify-content:flex-end;
+color: white;
+padding: 1px;
+display: inline-block;
+margin-right: 1.5em;
+cursor: pointer;
+}
+
+span{
+color: white;
+font-size: 18px;
+padding: 15px;
+}
+
+span:hover{
+
+text-decoration: underline;
+
+color:white;
+
+}
+
+.unread {
+  background-color: lavender;
+}
+
+
+.activeclass
+{
+// #e9fb56;
+color: #e9fb56;;
+
+}
+
+a{
+text-decoration: none;
+
+color:white;
+
+}
+
+matBadge, .mat-badge-content {
+
+width: auto;
+
+display: grid;
+
+min-width: 4px;
+
+min-height: 4px;
+
+text-align: center;
+
+align-items: center;
+
+padding: 1px 2px;
+
+top: -150px;
+
+right: -45px;
+
+}
+// @media(max-width:1000px)
+// {
+//     .logo{
+//         padding:10px 10px ; 
+//     }
+//     .links{
+//         padding:10px 10px ;
+//     }
+//     .icon
+//     {
+//         padding:10px 10px ;
+//     }
+// }
+// @media(max-width:700px)
+// {
+//     .logo{
+//         flex-direction: column;
+//     }
+//     .links
+//     {
+//         flex-direction: column;
+//     }
+//     .icon{
+//         flex-direction: column;
+//     }
+// }
